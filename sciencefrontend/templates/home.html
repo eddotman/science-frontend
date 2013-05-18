@@ -1,43 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
 <head>
 	<meta charset="utf-8">
     <title>ScienceFrontend</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="ScienceFrontend provides a unified graphical user interface for scientific scripts.">
+    <meta name="author" content="Edward Kim">
 	{% load staticfiles %}
     <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
+    <link href="{{STATIC_URL}}css/styles.css" rel="stylesheet">
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-filestyle.min.js"> </script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.1.min.js"> </script>
+
 </head>
 <body>
 	<div class="container">
 		<br>
-		<div class="jumbotron">
+		<div class="jumbotron bgcolor-red">
 			<h1>ScienceFrontend</h1>
-			<hr>
-			<h3>
-				<strong>ScienceFrontend</strong> provides a <em>unified front-end experience</em> for various scientific scripts. This web app is currently under development. You can check out the progress <a href="https://gist.github.com/eddotman/5426562">here</a>.
-			</h3>
 		</div>
-		<hr>
 		<div class="row">
-			<h1>Django Test Output Field:</h1>
-			<p>Current Date and Time: {{test_output}}</p>
-			<p>Testing Numpy Output: {{numpy_output}}</p>
+			<div>
+				<p>
+					<strong>ScienceFrontend</strong> provides a <em>unified front-end experience</em> for various scientific scripts. You can check out the progress <a href="https://gist.github.com/eddotman/5426562">here</a>.
+				</p>
+				
+				<hr>
+			</div>
 		</div>
+		<div class="row">
+			<div class="col-small-span-4">
+			<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3>Script Input</h3>
+					</div>
+					<br>
+					<p>Please provide an input file:</p>
+					<input type="file">
+
+					<div class="row">
+						<hr>
+						<div class="submit-btn"><button class="btn btn-large btn-success col-small-span-12"><h3>Submit</h3></button></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-small-span-8">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3>Script Output</h3>
+					</div>
+					<br>
+					<p>Current Date and Time: {{test_output}}</p>
+					<p>Testing Numpy Output: {{numpy_output}}</p>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
+			<h3>Command Shell</h3>
+			<div class="bgcolor-darkgrey shell-out img-rounded">
+				<p>Command Shell Interface (for advanced users)</p>
+				<p>Example Output....</p>
+			</div>
+			<textarea class="bgcolor-darkblue shell-in">$ Type commands...</textarea>
+			<br>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="footer">
+			<a href="https://github.com/eddotman/science-frontend"><img style="background:#4183C4" src="{{STATIC_URL}}img/github.png"></a>
+			<a href="https://twitter.com/eddotman"><img style="background:#00ACED" src="{{STATIC_URL}}img/twitter.png"></a>
+			<a href="http://www.linkedin.com/in/eddotman"><img style="background:#007FB1" src="{{STATIC_URL}}img/linkedin.png"></a>
+			<h3 class="pull-right">Created by <a href="http://www.edwardkim.name">Edward Kim</a></h3>
+
+		</div>
+
 	</div>
+
+
 </body>
 </html>
