@@ -14,10 +14,6 @@
 
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
-	
-	<!-- Javascript -->
-	<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-filestyle.min.js"> </script>
-	<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.1.min.js"> </script>
 
 </head>
 <body>
@@ -29,21 +25,32 @@
 		<div class="row">
 			<div>
 				<p>
-					<strong>ScienceFrontend</strong> provides a <em>unified front-end experience</em> for various scientific scripts. You can check out the progress <a href="https://gist.github.com/eddotman/5426562">here</a>.
+					<strong>ScienceFrontend</strong> provides a <em>unified front-end experience</em> for various scientific scripts. This webapp is currently <strong>under development</strong>. You can check out the progress <a href="https://gist.github.com/eddotman/5426562">here</a>.
 				</p>
 				
 				<hr>
 			</div>
 		</div>
+		<div class="row bgcolor-lightgrey img-rounded">
+			<div class="col-small-span-8">
+				<div class="search">
+					<input type="text" value="Search scripts...">
+				</div>
+			</div>
+			<div class="col-small-span-4">
+				<h3><pre>Current: <strong>example-script.py</strong></pre></h3>
+			</div>
+		</div>
+		<hr>
 		<div class="row">
 			<div class="col-small-span-4">
-			<div class="panel panel-primary">
+			<div class="panel panel-primary gui-in">
 					<div class="panel-heading">
-						<h3>Script Input</h3>
+						<h3>Input Panel</h3>
 					</div>
 					<br>
 					<p>Please provide an input file:</p>
-					<input type="file">
+					<input type="file" title="Browse for files...">
 
 					<div class="row">
 						<hr>
@@ -53,9 +60,9 @@
 			</div>
 
 			<div class="col-small-span-8">
-				<div class="panel panel-primary">
+				<div class="panel panel-primary gui-out">
 					<div class="panel-heading">
-						<h3>Script Output</h3>
+						<h3>Output Panel</h3>
 					</div>
 					<br>
 					<p>Current Date and Time: {{test_output}}</p>
@@ -69,10 +76,7 @@
 		<div class="row">
 			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
 			<h3>Command Shell</h3>
-			<div class="bgcolor-darkgrey shell-out img-rounded">
-				<p>Command Shell Interface (for advanced users)</p>
-				<p>Example Output....</p>
-			</div>
+			<textarea class="bgcolor-darkgrey shell-out img-rounded" readonly>Command Shell Interface (for advanced users)</textarea>
 			<textarea class="bgcolor-darkblue shell-in">$ Type commands...</textarea>
 			<br>
 			</div>
@@ -89,6 +93,9 @@
 		<br>
 	</div>
 
+	<!-- Javascript -->
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.1.min.js"> </script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap.file-input.js"> </script>
 
 </body>
 </html>
