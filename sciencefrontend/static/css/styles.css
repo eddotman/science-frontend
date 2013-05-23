@@ -15,8 +15,13 @@
 .shell-out {border: none; box-shadow: none; border-radius:none; height:190px; font-family: "consolas", "courier"; color:#d35400; padding: 10px; resize:none; text-align:left;}
 textarea[readonly] {background:#222222;}
 
-.gui-in {min-height:300px;}
-.gui-out {min-height:300px;}
+.gui {min-height:300px;}
 
-.search {margin-top: 21px; padding-bottom:10px;}
+.footer-nav {text-align:center;}
+.footer-nav ul {list-style-type: none; margin-top:15px;}
+.footer-nav ul li {display: inline; margin: 2px 10px;}
+
+.search {margin-top: 20px; margin-bottom:20px;}
 .search input[type="text"] {font-size:20px;}
+
+.curr-script {margin-top:19px; min-height:34px;}

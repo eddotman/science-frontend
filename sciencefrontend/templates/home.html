@@ -37,27 +37,15 @@
 					<input type="text" value="Search scripts...">
 				</div>
 			</div>
-			<div class="col-small-span-4">
-				<h3><pre>Current: <strong>example-script.py</strong></pre></h3>
+			<div class="col-small-span-4 curr-script">
+				<pre>Current: <strong><a href="{{script_link}}">{{script_name}}</a></strong></pre>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-small-span-4">
-			<div class="panel panel-primary gui-in">
-					<p>Please provide an input file:</p>
-					<input type="file" title="Browse for files...">
-						{{script_input}}
-					<div class="row">
-						<hr>
-						<div class="submit-btn"><button class="btn btn-large btn-success col-small-span-12"><h3>Submit</h3></button></div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-small-span-8">
-				<div class="panel panel-primary gui-out">
-					{{script_output}}
+			<div class="col-small-span-12">
+				<div class="panel panel-primary gui">
+					{{script_gui | safe}}
 				</div>
 			</div>
 		</div>
@@ -65,7 +53,7 @@
 			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
 			<h3>Command Shell</h3>
 			<textarea class="bgcolor-darkgrey shell-out img-rounded" readonly>Command Shell Interface (for advanced users)</textarea>
-			<textarea class="bgcolor-darkblue shell-in">$ Type commands...</textarea>
+			<input type="text" class="shell-in" value="Type commands...">
 			<br>
 			</div>
 		</div>
@@ -73,10 +61,22 @@
 		<hr>
 
 		<div class="footer">
-			<a href="https://github.com/eddotman/science-frontend"><img style="background:#4183C4" src="{{STATIC_URL}}img/github.png"></a>
-			<a href="https://twitter.com/eddotman"><img style="background:#00ACED" src="{{STATIC_URL}}img/twitter.png"></a>
-			<a href="http://www.linkedin.com/in/eddotman"><img style="background:#007FB1" src="{{STATIC_URL}}img/linkedin.png"></a>
-			<h3 class="pull-right">Created by <a href="http://www.edwardkim.name">Edward Kim</a></h3>
+			<div class="row">
+				<div class="col-small-span-4">
+					<a href="https://github.com/eddotman/science-frontend"><img style="background:#4183C4" src="{{STATIC_URL}}img/github.png"></a>
+					<a href="https://twitter.com/eddotman"><img style="background:#00ACED" src="{{STATIC_URL}}img/twitter.png"></a>
+					<a href="http://www.linkedin.com/in/eddotman"><img style="background:#007FB1" src="{{STATIC_URL}}img/linkedin.png"></a>
+				</div>
+				<div class="col-small-span-4 footer-nav">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about/">About</a></li>
+						<li><a href="/scripts/">Scripts</a></li>
+				</div>
+				<div class="col-small-span-4">
+					<h4 class="pull-right">Created by <a href="http://www.edwardkim.name">Edward Kim</a></h4>
+				</div>
+			</div>
 		</div>
 		<br>
 	</div>
