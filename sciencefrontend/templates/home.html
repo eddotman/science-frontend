@@ -45,13 +45,9 @@
 		<div class="row">
 			<div class="col-small-span-4">
 			<div class="panel panel-primary gui-in">
-					<div class="panel-heading">
-						<h3>Input Panel</h3>
-					</div>
-					<br>
 					<p>Please provide an input file:</p>
 					<input type="file" title="Browse for files...">
-
+						{{script_input}}
 					<div class="row">
 						<hr>
 						<div class="submit-btn"><button class="btn btn-large btn-success col-small-span-12"><h3>Submit</h3></button></div>
@@ -61,18 +57,10 @@
 
 			<div class="col-small-span-8">
 				<div class="panel panel-primary gui-out">
-					<div class="panel-heading">
-						<h3>Output Panel</h3>
-					</div>
-					<br>
-					<p>Current Date and Time: {{test_output}}</p>
-					<p>Testing Numpy Output: {{numpy_output}}</p>
+					{{script_output}}
 				</div>
 			</div>
 		</div>
-
-		<hr>
-
 		<div class="row">
 			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
 			<h3>Command Shell</h3>

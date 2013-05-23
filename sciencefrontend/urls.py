@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from sciencefrontend.views import * 
+from sciencefrontend.views import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Uncomment the next two lines to enable the admin:
@@ -7,7 +7,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^$', test_output),
+	url(r'^$', home),
+	url(r'^function_plot_png/(?P<funct>.+)/(?P<arg>.+)/(?P<xmin>-?\d+)/(?P<xmax>-?\d+)/(?P<ymin>-?\d+)/(?P<ymax>-?\d+)/(?P<xlabel>\w+)/(?P<ylabel>\w+)/plot\.png$', function_plot_png),
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),
     # url(r'^sciencefrontend/', include('sciencefrontend.foo.urls')),
