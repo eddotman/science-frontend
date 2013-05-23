@@ -19,9 +19,10 @@ urlpatterns = patterns('',
 	url(r'^$', home),
 
 	#Scripts
-	url(r'^function_plot_png/(?P<funct>.+)/(?P<arg>.+)/(?P<xmin>-?\d+)/(?P<xmax>-?\d+)/(?P<ymin>-?\d+)/(?P<ymax>-?\d+)/(?P<xlabel>\w+)/(?P<ylabel>\w+)/plot\.png$', function_plot_png),
+	url(r'^function_plot/$', function_plot),
+	url(r'^function_plot/plot\.(?P<type>.+)$', function_plot_image),
 
-	
+
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),
     # url(r'^sciencefrontend/', include('sciencefrontend.foo.urls')),

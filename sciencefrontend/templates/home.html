@@ -18,10 +18,14 @@
 </head>
 <body>
 	<div class="container">
-		<br>
-		<div class="jumbotron bgcolor-red">
-			<h1>ScienceFrontend</h1>
-		</div>
+	<div class="row">
+		<ul class="nav navbar nav-justified navbar-fixed-top bgcolor-red">
+			<li><a href="/"><strong>ScienceFrontend</strong></a></li>
+			<li><a href="/about/">About</a></li>
+			<li><a href="/scripts/">Scripts</a></li>
+			<li><a href="/contact/">Contact</a></li>
+		</ul>
+	</div>
 		<div class="row">
 			<div>
 				<p>
@@ -52,7 +56,7 @@
 		<div class="row">
 			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
 			<h3>Command Shell</h3>
-			<textarea class="bgcolor-darkgrey shell-out img-rounded" readonly>Command Shell Interface (for advanced users)</textarea>
+			<textarea class="bgcolor-darkgrey shell-out img-rounded" readonly>Command Shell Interface (type 'help' for help)</textarea>
 			<input type="text" class="shell-in" value="Type commands...">
 			<br>
 			</div>
@@ -67,13 +71,8 @@
 					<a href="https://twitter.com/eddotman"><img style="background:#00ACED" src="{{STATIC_URL}}img/twitter.png"></a>
 					<a href="http://www.linkedin.com/in/eddotman"><img style="background:#007FB1" src="{{STATIC_URL}}img/linkedin.png"></a>
 				</div>
-				<div class="col-small-span-4 footer-nav">
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="/about/">About</a></li>
-						<li><a href="/scripts/">Scripts</a></li>
-				</div>
-				<div class="col-small-span-4">
+				
+				<div class="col-small-span-8">
 					<h4 class="pull-right">Created by <a href="http://www.edwardkim.name">Edward Kim</a></h4>
 				</div>
 			</div>
