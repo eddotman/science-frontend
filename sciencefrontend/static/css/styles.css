@@ -18,6 +18,7 @@ textarea[readonly] {background:#222222;}
 .gui {min-height:300px;}
 
 .nav li a {color:#ffffff;}
+.navcontainer {margin-bottom:60px;}
 
 .search {margin-top: 20px; margin-bottom:20px;}
 .search input[type="text"] {font-size:20px;}
