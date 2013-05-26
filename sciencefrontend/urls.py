@@ -4,6 +4,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 #Import general views
 from sciencefrontend.views import *
+from sciencefrontend import ajax
 
 #Import scripts
 from scripts.function_plot import *
@@ -20,7 +21,7 @@ urlpatterns = patterns('',
 
 	#Scripts
 	url(r'^function_plot/$', function_plot),
-	url(r'^function_plot/plot\.(?P<type>.+)$', function_plot_image),
+	url(r'^function_plot/plot\.(?P<type>.+)$', send_form),
 
 
     # Examples:

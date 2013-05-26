@@ -16,7 +16,7 @@ def echo_function_plot_content():
 			<hr>
 			<h2>Please upload a data file</h2>
 			<p>(Format: two columns of floating-point numbers; first row should be [x,y] labels.)</p>
-			<input type=\"file\" title=\"Upload a data file...\">
+			
 			<hr>
 			<h3>Example: Data file format</h3>
 			<pre>

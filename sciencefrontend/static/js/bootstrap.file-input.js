@@ -85,7 +85,7 @@ $('input[type=file]').each(function(i,elem){
       $(this).parent().after('<span class="file-input-name">'+$(this)[0].files.length+' files</span>');
     }
     else {
-      $(this).parent().after('<span class="file-input-name">'+$(this).val().replace('','')+'</span>');
+      $(this).parent().after('<span class="file-input-name">'+$(this).val().replace('C:\\fakepath\\','')+'</span>');
     }
 
   });
