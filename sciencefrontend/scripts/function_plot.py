@@ -1,17 +1,10 @@
 from django.shortcuts import render
+from script_base import ScriptBase
 
 def function_plot(request):
-	import os
+	script = ScriptBase("function_plot")
 
-	name = "function_plot"
-
-	script_name = name + ".py"
-	script_link = "https://github.com/eddotman/science-frontend/blob/master/sciencefrontend/scripts/" + name + ".py"
-
-	html_content = open(os.path.dirname(__file__) + "\\html_content\\" + name + ".html")
-	script_gui = html_content.read()
-
-	return render(request, 'home.html', {'script_name': script_name, 'script_link': script_link, 'script_gui': script_gui})
+	return render(request, 'home.html', {'script_name': script.script_name, 'script_link': script.script_link, 'script_gui': script.script_gui})
 
 def function_plot_image(request, type):
 	from numpy import *
