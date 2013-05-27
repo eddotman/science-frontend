@@ -1,10 +1,18 @@
 <h1>function_plot.py</h1>
 <pre><strong>function_plot.py</strong> will convert an uploaded data file (containing two columns of x and y data) into a high-quality graph (PNG + PDF).</pre>
+
 <hr>
+
 <h2>Please upload a data file</h2>
 <p>(Format: two columns of floating-point numbers; first row should be [x,y] labels.)</p>
 
+<form enctype="multipart/form-data">
+	<p><input name="file" type="file" title="Upload a data file..." ></p>
+	<p><input onclick="myFunction()" class="btn btn-success" type="button" value="Submit!" ></p>
+</form>
+
 <hr>
+
 <h3>Example: Data file format</h3>
 <pre>
 x                 y

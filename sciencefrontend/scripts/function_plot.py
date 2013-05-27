@@ -2,9 +2,9 @@ from django.shortcuts import render
 from script_base import ScriptBase
 
 def function_plot(request):
-	script = ScriptBase("function_plot")
+	s = ScriptBase("function_plot")
 
-	return render(request, 'home.html', {'script_name': script.script_name, 'script_link': script.script_link, 'script_gui': script.script_gui})
+	return render(request, 'home.html', {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link, 'script_gui': s.script_gui})
 
 def function_plot_image(request, type):
 	from numpy import *

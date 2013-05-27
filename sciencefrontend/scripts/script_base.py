@@ -9,4 +9,5 @@ class ScriptBase:
 		self.script_link = "https://github.com/eddotman/science-frontend/blob/master/sciencefrontend/scripts/" + self.name + ".py"
 
 		html_content = open(os.path.dirname(__file__) + "\\html_content\\" + name + ".html")
+		self.js_link =  name + ".js"
 		self.script_gui = html_content.read()
