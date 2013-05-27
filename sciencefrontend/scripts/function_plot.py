@@ -1,35 +1,17 @@
 from django.shortcuts import render
 
 def function_plot(request):
+	import os
 
-	script_name = "function_plot.py"
-	script_link = "https://github.com/eddotman/science-frontend/blob/master/sciencefrontend/scripts/function_plot.py"
+	name = "function_plot"
 
-	script_gui = echo_function_plot_content()
+	script_name = name + ".py"
+	script_link = "https://github.com/eddotman/science-frontend/blob/master/sciencefrontend/scripts/" + name + ".py"
+
+	html_content = open(os.path.dirname(__file__) + "\\html_content\\" + name + ".html")
+	script_gui = html_content.read()
 
 	return render(request, 'home.html', {'script_name': script_name, 'script_link': script_link, 'script_gui': script_gui})
-
-def echo_function_plot_content():
-	content = """
-			<h1>function_plot.py</h1>
-			<pre><strong>function_plot.py</strong> will convert an uploaded data file (containing two columns of x and y data) into a high-quality graph (PNG + PDF).</pre>
-			<hr>
-			<h2>Please upload a data file</h2>
-			<p>(Format: two columns of floating-point numbers; first row should be [x,y] labels.)</p>
-			
-			<hr>
-			<h3>Example: Data file format</h3>
-			<pre>
-			x                 y
-			1                 1.0
-			2                 4.0
-			3                 9.0
-			.                 .
-			.                 .
-			.                 .
-			</pre>
-			"""
-	return content
 
 def function_plot_image(request, type):
 	from numpy import *

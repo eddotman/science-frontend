@@ -8,24 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ScienceFrontend provides a unified graphical user interface for scientific scripts.">
     <meta name="author" content="Edward Kim">
-	{% load staticfiles %}
+
+    <!-- CSS files -->
     <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
     <link href="{{STATIC_URL}}css/styles.css" rel="stylesheet">
 
-    <!-- Fav and touch icons -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
-
 
 	<!-- Javascript -->
 	<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.1.min.js"> </script>
 	<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap.file-input.js"> </script>
 	<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap.js"> </script>
-	<script type="text-javascript">
-	function send_form(){
-    	Dajaxice.sciencefrontend.send_form(Dajax.process,{'form':$('#datafile_form').serialize(true)});
-	};
-	</script>
-
 
 </head>
 <body>
@@ -62,10 +56,6 @@
 		<div class="row">
 			<div class="col-small-span-12">
 				<div class="panel panel-primary gui">
-					<form action="" method="post" id="data_form" accept-charset="utf-8">
-		    	{{ form.as_p }}
-		    <p><input type="button" value="Submit" onclick="send_form();"></p>
-			</form>
 					{{script_gui | safe}}
 				</div>
 			</div>
@@ -86,7 +76,6 @@
 				<div class="col-small-span-4">
 					<a href="https://github.com/eddotman/science-frontend"><img style="background:#4183C4" src="{{STATIC_URL}}img/github.png"></a>
 					<a href="https://twitter.com/eddotman"><img style="background:#00ACED" src="{{STATIC_URL}}img/twitter.png"></a>
-					<a href="http://www.linkedin.com/in/eddotman"><img style="background:#007FB1" src="{{STATIC_URL}}img/linkedin.png"></a>
 				</div>
 				
 				<div class="col-small-span-8">

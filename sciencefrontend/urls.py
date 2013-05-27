@@ -2,11 +2,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-#Import general views
-from sciencefrontend.views import *
-from sciencefrontend import ajax
-
 #Import scripts
+from scripts.home_content import *
 from scripts.function_plot import *
 
 
@@ -17,11 +14,11 @@ from scripts.function_plot import *
 urlpatterns = patterns('',
 
 	#Pages
-	url(r'^$', home),
+	url(r'^$', home_content),
 
 	#Scripts
 	url(r'^function_plot/$', function_plot),
-	url(r'^function_plot/plot\.(?P<type>.+)$', send_form),
+	url(r'^function_plot/plot\.(?P<type>.+)$', function_plot_image),
 
 
     # Examples:
