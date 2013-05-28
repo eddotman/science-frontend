@@ -6,10 +6,15 @@
 <h2>Please upload a data file</h2>
 <p>(Format: two columns of floating-point numbers; first row should be [x,y] labels.)</p>
 
-<form enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" id="fileform">{% csrf_token %}
 	<p><input name="file" type="file" title="Upload a data file..." ></p>
-	<p><input onclick="myFunction()" class="btn btn-success" type="button" value="Submit!" ></p>
+	<p><input class="btn btn-success" type="submit" value="Submit" ></p>
 </form>
+
+<hr>
+
+<div id="result">
+</div>
 
 <hr>
 
