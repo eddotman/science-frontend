@@ -27,8 +27,6 @@ urlpatterns = patterns('',
 	#Scripts
 	url(r'^function_plot/$', function_plot),
 	url(r'^function_plot/plot\.(?P<type>.+)$', function_plot_image),
-	url(r'^function_plot/submit/$', function_plot_submit),
-
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),

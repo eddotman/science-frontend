@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from django.http import HttpResponse
+from base64 import *
 
 
 def function_plot(request):
@@ -45,9 +46,3 @@ def function_plot_image(request, type):
 		response = None
 	
 	return response
-	
-
-def function_plot_submit(request):
-
-	a = "test"
-	return HttpResponse(a)
