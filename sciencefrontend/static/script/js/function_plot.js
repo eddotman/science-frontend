@@ -16,7 +16,7 @@ $(document).ready(function() {
 	var buttonPDF = '<button class="btn btn-primary" onclick="location.href=\'' + url + '.pdf\'" >Download PDF version</button>';
 	var buttonSVG = '<button class="btn btn-primary" onclick="location.href=\'' + url + '.svg\'" >Download SVG version</button>';
 
-	$('#resultButtons').append(buttonPDF);
+	$('#resultButtons').html(buttonPDF);
 	$('#resultButtons').append(" ");
 	$('#resultButtons').append(buttonSVG);
 
