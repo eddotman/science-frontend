@@ -25,8 +25,8 @@ def function_plot_image(request, funct, xmin, xmax, xincrem, type):
 	y = eval(funct)
 
 	ax.plot(x, y, color='k', ls='-', lw='2.5')
-	ax.set_xlabel('Y')
-	ax.set_ylabel('X')
+	ax.set_xlabel('X')
+	ax.set_ylabel('Y')
 
 	canvas = FigureCanvas(fig)
 
