@@ -1,31 +1,32 @@
 from script_base import ScriptBase
+from django.shortcuts import render
+
+from numpy import *
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+from django.http import HttpResponse
+from base64 import *
+
 
 def function_plot(request):
-	from django.shortcuts import render
 
 	s = ScriptBase("function_plot")
 
-	return render(request, 'home.html', {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link, 'script_gui': s.script_gui})
+	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link})
 
-def function_plot_image(request, type):
-	from numpy import *
-	import matplotlib.pyplot as plt
-	from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-	from matplotlib.figure import Figure
-	from django.http import HttpResponse
+
+def function_plot_image(request, funct, xmin, xmax, xincrem, type):
 
 	fig = Figure(facecolor=(1,1,1))
 	ax = fig.add_subplot(111)
 
-	x = arange(0, 10, 0.1)
-	datax = x
-	datay = sin(x)
+	x = arange(float(xmin), float(xmax), float(xincrem))
+	y = eval(funct)
 
-	ax.plot(datax, datay, color='k', ls='-', lw='2.5')
-	#ax.set_xlim(float(xmin), float(xmax))
-	#ax.set_ylim(float(ymin), float(ymax))
-	#ax.set_xlabel(xlabel)
-	#ax.set_ylabel(ylabel)
+	ax.plot(x, y, color='k', ls='-', lw='2.5')
+	ax.set_xlabel('X')
+	ax.set_ylabel('Y')
 
 	canvas = FigureCanvas(fig)
 
@@ -42,9 +43,3 @@ def function_plot_image(request, type):
 		response = None
 	
 	return response
-
-def function_plot_submit(request):
-	from django.http import HttpResponse
-
-	a = "test"
-	return HttpResponse(a)

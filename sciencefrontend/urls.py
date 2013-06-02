@@ -2,8 +2,13 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-#Import scripts
+#Import pages
 from scripts.home_content import *
+from scripts.about import *
+from scripts.scripts import *
+from scripts.contact import *
+
+#Import scripts
 from scripts.function_plot import *
 
 
@@ -15,12 +20,13 @@ urlpatterns = patterns('',
 
 	#Pages
 	url(r'^$', home_content),
+    url(r'^about/$', about),
+    url(r'^scripts/$', scripts),
+    url(r'^contact/$', contact),
 
 	#Scripts
 	url(r'^function_plot/$', function_plot),
-	url(r'^function_plot/plot\.(?P<type>.+)$', function_plot_image),
-	url(r'^function_plot/submit/$', function_plot_submit),
-
+	url(r'^function_plot/(?P<funct>.+)/(?P<xmin>.+)/(?P<xmax>.+)/(?P<xincrem>.+)/plot\.(?P<type>.+)$', function_plot_image),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),

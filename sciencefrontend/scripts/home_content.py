@@ -3,6 +3,6 @@ from script_base import ScriptBase
 
 def home_content(request):
 	
-	script = ScriptBase("home_content")
+	s = ScriptBase("home_content")
 
-	return render(request, 'home.html', {'script_name': script.script_name, 'script_link': script.script_link, 'script_gui': script.script_gui})
+	return render(request, s.template, {'script_name': s.script_name, 'script_link': s.script_link})

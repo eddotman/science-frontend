@@ -1,17 +1,38 @@
+{% extends "base.html" %}
+
+{% block script_gui %}
 <h1>function_plot.py</h1>
-<pre><strong>function_plot.py</strong> will convert an uploaded data file (containing two columns of x and y data) into a high-quality graph (PNG + PDF).</pre>
-<hr>
-<h2>Please upload a data file</h2>
-<p>(Format: two columns of floating-point numbers; first row should be [x,y] labels.)</p>
+<pre><strong>function_plot.py</strong> will plot a function as a high-quality graph (PNG + PDF + SVG).</pre>
 
 <hr>
-<h3>Example: Data file format</h3>
-<pre>
-x                 y
-1                 1.0
-2                 4.0
-3                 9.0
-.                 .
-.                 .
-.                 .
-</pre>
+
+<h2>Input plotting data:</h2>
+
+<form method="post" id="funcform">{% csrf_token %}
+	<p><input id="funct" type="text" placeholder="Enter a function (e.g. x**2, cos(x), sin(x)*cos(x), x+1)"></p>
+	<div class="row">
+		<div class="col-small-span-4">
+			<input id="xmin" type="text" placeholder="Enter the minimum x-value (e.g. 0.0)">
+		</div>
+		<div class="col-small-span-4">
+			<input id="xmax" type="text" placeholder="Enter the maximum x-value (e.g. 10.0)">
+		</div>
+		<div class="col-small-span-4">
+			<input id="xincrem" type="text" placeholder="Enter the x-increment (e.g. 0.01)">
+		</div>
+	</div>
+	
+	<br>
+
+	<input class="btn btn-success" type="submit" value="Plot my function!" >
+
+</form>
+
+<br>
+
+<div id="result">
+	<img id="result_img">
+	<div id="resultButtons">
+	</div>
+</div>
+{% endblock %}
