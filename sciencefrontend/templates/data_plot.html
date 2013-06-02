@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block script_gui %}
+<h1>data_plot.py</h1>
+<pre><strong>data_plot.py</strong> plots two-column data as a high-quality graph (PNG + PDF + SVG). Use whitespace as the delimiter and reserve the first line for axis labels.</pre>
+
+<hr>
+
+<h2>Input plotting data:</h2>
+
+<form method="post" id="dataform">{% csrf_token %}
+	<p><textarea rows="10" placeholder="Please copy+paste or manually enter your data..."></textarea></p>
+	
+	<br>
+
+	<input class="btn btn-success" type="submit" value="Plot my data!" >
+
+</form>
+
+<br>
+
+<div id="result">
+	<img id="result_img">
+	<div id="resultButtons">
+	</div>
+</div>
+
+<h2>Example: Input data</h2>
+<pre>
+Time (s)        Dist. (m)
+1.0             1.0
+2.0             4.0
+3.0             9.0
+</pre>
+
+{% endblock %}

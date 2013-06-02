@@ -8,20 +8,37 @@ from matplotlib.figure import Figure
 from django.http import HttpResponse
 
 
-def function_plot(request):
+def data_plot(request):
+	"""
+	Renders main view.
+	"""
 
-	s = ScriptBase("function_plot")
+	s = ScriptBase("data_plot")
 
 	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link})
 
 
-def function_plot_image(request, funct, xmin, xmax, xincrem, type):
+def data_plot_image(request, data):
+	"""
+	Renders a PNG/PDF/SVG plot of data from a textarea input.
+
+	ARGUMENTS:
+
+		data: multiline input from a textarea field; should be two columns of x-y data with
+		the first line as the axis labels.
+	"""
 
 	fig = Figure(facecolor=(1,1,1))
 	ax = fig.add_subplot(111)
 
-	x = arange(float(xmin), float(xmax), float(xincrem))
-	y = eval(funct)
+
+	if request.method == "POST":
+		textdata = readtxt(request.POST["data"])
+		xlabel = textdata[0,0]
+		ylabel = textdata[0,1]
+
+		x = textdata[1:,0]
+		y = textdata[1:,1]
 
 	ax.plot(x, y, color='k', ls='-', lw='2.5')
 	ax.set_xlabel('X')

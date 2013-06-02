@@ -10,6 +10,7 @@ from scripts.contact import *
 
 #Import scripts
 from scripts.function_plot import *
+from scripts.data_plot import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -27,6 +28,8 @@ urlpatterns = patterns('',
 	#Scripts
 	url(r'^function_plot/$', function_plot),
 	url(r'^function_plot/(?P<funct>.+)/(?P<xmin>.+)/(?P<xmax>.+)/(?P<xincrem>.+)/plot\.(?P<type>.+)$', function_plot_image),
+
+    url(r'^data_plot/$', data_plot),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),
