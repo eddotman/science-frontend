@@ -9,7 +9,6 @@ $(document).ready(function() {
    	var xincrem = $("#xincrem").val();
    	var url = "/function_plot/" + funct + "/" + xmin + "/" + xmax + "/" + xincrem + "/plot";
    	var url_png = url + ".png";
-   	//var url = "/function_plot/cos(x)/1/5/1/plot.png";
 
 	$('#result_img').attr("src", url_png);
 

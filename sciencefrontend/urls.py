@@ -30,6 +30,7 @@ urlpatterns = patterns('',
 	url(r'^function_plot/(?P<funct>.+)/(?P<xmin>.+)/(?P<xmax>.+)/(?P<xincrem>.+)/plot\.(?P<type>.+)$', function_plot_image),
 
     url(r'^data_plot/$', data_plot),
+    url(r'^data_plot/plot\.(?P<type>.+)$', data_plot_image),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),

@@ -11,6 +11,10 @@ from django.http import HttpResponse
 def data_plot(request):
 	"""
 	Renders main view.
+
+	RETURNS:
+
+		a Django render() HttpResponse object
 	"""
 
 	s = ScriptBase("data_plot")
@@ -18,31 +22,41 @@ def data_plot(request):
 	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link})
 
 
-def data_plot_image(request, data):
+def data_plot_image(request, type):
 	"""
 	Renders a PNG/PDF/SVG plot of data from a textarea input.
 
 	ARGUMENTS:
 
-		data: multiline input from a textarea field; should be two columns of x-y data with
+		(POSTdata) data: multiline input from a textarea field; should be two columns of x-y data with
 		the first line as the axis labels.
-	"""
 
+		type: if the returned image should be PNG, PDF or SVG.
+
+	RETURNS:
+
+		an HttpResponse of the graph with the appropriate content type.
+	"""
+	
 	fig = Figure(facecolor=(1,1,1))
 	ax = fig.add_subplot(111)
 
 
 	if request.method == "POST":
-		textdata = readtxt(request.POST["data"])
+		return HttpResponse(request.POST["data"])
+		#textdata = loadtxt(request.POST["data"], dtype='S')
 		xlabel = textdata[0,0]
 		ylabel = textdata[0,1]
 
-		x = textdata[1:,0]
-		y = textdata[1:,1]
+		x = float(textdata[1:,0])
+		y = float(textdata[1:,1])
+	
+	else:
+		return None
 
 	ax.plot(x, y, color='k', ls='-', lw='2.5')
-	ax.set_xlabel('X')
-	ax.set_ylabel('Y')
+	ax.set_xlabel(xlabel)
+	ax.set_ylabel(ylabel)
 
 	canvas = FigureCanvas(fig)
 
