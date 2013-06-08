@@ -23,7 +23,7 @@ $(document).ready(function() {
    	var dataform = $("#data").val();
 
     var jqxhr = $.post("/data_plot/plot.png", {'data': dataform})
-    .done(function(data) { alert("Returned: " + data); })
+    .done(function(data) { $('#result_img').attr("src", data); })
     .fail(function() { alert("fail"); });
 
 	});

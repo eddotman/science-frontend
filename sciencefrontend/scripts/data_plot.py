@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from django.http import HttpResponse
+from base64 import b64encode
 
 
 def data_plot(request):
@@ -38,31 +39,46 @@ def data_plot_image(request, type):
 		an HttpResponse of the graph with the appropriate content type.
 	"""
 	
-	fig = Figure(facecolor=(1,1,1))
-	ax = fig.add_subplot(111)
+	#fig = Figure(facecolor=(1,1,1))
+	#ax = fig.add_subplot(111)
 
 
 	if request.method == "POST":
-		return HttpResponse(request.POST["data"])
-		#textdata = loadtxt(request.POST["data"], dtype='S')
-		xlabel = textdata[0,0]
-		ylabel = textdata[0,1]
+		
+		textdata = str.splitlines(str(request.POST["data"]))
+		splitdata = empty((0,2))
 
-		x = float(textdata[1:,0])
-		y = float(textdata[1:,1])
-	
+		for line in textdata:
+			splitdata = vstack((splitdata, str.split(line)))
+
+		xlabel = splitdata[0][0]
+		ylabel = splitdata[0][1]
+
+		x = empty((1,0))
+		y = empty((1,0))
+
+		x = transpose(splitdata[1:,0])
+		y = transpose(splitdata[1:,1])
+
+		for i in x:
+			i = float(i)
+		for j in y:
+			j = float(j)
+		
+
 	else:
 		return None
 
-	ax.plot(x, y, color='k', ls='-', lw='2.5')
-	ax.set_xlabel(xlabel)
-	ax.set_ylabel(ylabel)
+	plt.plot(x, y, color='k', ls='-', lw='2')
+	plt.xlabel(xlabel)
+	plt.ylabel(ylabel)
 
-	canvas = FigureCanvas(fig)
+	#canvas = FigureCanvas(fig)
 
 	if type == "png":
-		response = HttpResponse(content_type="image/png")
-		canvas.print_png(response)
+		plt.savefig("sciencefrontend/static/img/picplot.png")
+		#response = HttpResponse(content_type="image/png")
+		#canvas.print_png(response)
 	elif type == "pdf":
 		response = HttpResponse(content_type="application/pdf")
 		canvas.print_pdf(response)
@@ -72,4 +88,4 @@ def data_plot_image(request, type):
 	else:
 		response = None
 	
-	return response
+	return HttpResponse("/static/img/picplot.png")
