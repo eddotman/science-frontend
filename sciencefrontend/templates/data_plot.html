@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-
 {% block script_gui %}
-<h1>data_plot.py</h1>
-<pre><strong>data_plot.py</strong> plots two-column data as a high-quality graph (PNG + PDF + SVG). Use whitespace as the delimiter and reserve the first line for axis labels.</pre>
+<h1>{{script_name}}</h1>
+<pre><strong>data_plot.py</strong> plots two-column data as a high-quality graph (PNG + PDF + SVG). Reserve the first line for axis labels.</pre> 
 
-<hr>
+
 
 <h2>Input plotting data:</h2>
 
@@ -23,11 +22,13 @@
 	<img id="result_img">
 	<div id="resultButtons">
 	</div>
+	<div id="resultWarning">
+	</div>
 </div>
 
 <h2>Example: Input data (As K-Edge XAFS)</h2>
 <pre>
-Energy        x*mu
+ 'Energy (eV)'    'x*mu (arb.)'
   11861.500       0.52126387E-01
   11861.800       0.54510878E-01
   11862.500       0.62948172E-01

@@ -12,8 +12,8 @@ $(document).ready(function() {
 
 	$('#result_img').attr("src", url_png);
 
-	var buttonPDF = '<button class="btn btn-primary" onclick="location.href=\'' + url + '.pdf\'" >Download PDF version</button>';
-	var buttonSVG = '<button class="btn btn-primary" onclick="location.href=\'' + url + '.svg\'" >Download SVG version</button>';
+	var buttonPDF = '<button class="btn btn-primary" onclick="window.open(\'' + url + '.pdf\', \'_blank\')" >Download PDF version</button>';
+	var buttonSVG = '<button class="btn btn-primary" onclick="window.open(\'' + url + '.svg\', \'_blank\')" >Download SVG version</button>';
 
 	$('#resultButtons').html(buttonPDF);
 	$('#resultButtons').append(" ");

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from django.http import HttpResponse
-from base64 import b64encode
+from shlex import split
 
 
 def data_plot(request):
@@ -23,7 +23,7 @@ def data_plot(request):
 	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link})
 
 
-def data_plot_image(request, type):
+def data_plot_image(request):
 	"""
 	Renders a PNG/PDF/SVG plot of data from a textarea input.
 
@@ -32,16 +32,10 @@ def data_plot_image(request, type):
 		(POSTdata) data: multiline input from a textarea field; should be two columns of x-y data with
 		the first line as the axis labels.
 
-		type: if the returned image should be PNG, PDF or SVG.
-
 	RETURNS:
 
-		an HttpResponse of the graph with the appropriate content type.
+		an HttpResponse with a reference to the plot path.
 	"""
-	
-	#fig = Figure(facecolor=(1,1,1))
-	#ax = fig.add_subplot(111)
-
 
 	if request.method == "POST":
 		
@@ -49,7 +43,7 @@ def data_plot_image(request, type):
 		splitdata = empty((0,2))
 
 		for line in textdata:
-			splitdata = vstack((splitdata, str.split(line)))
+			splitdata = vstack((splitdata, split(line)))
 
 		xlabel = splitdata[0][0]
 		ylabel = splitdata[0][1]
@@ -64,7 +58,6 @@ def data_plot_image(request, type):
 			i = float(i)
 		for j in y:
 			j = float(j)
-		
 
 	else:
 		return None
@@ -73,19 +66,9 @@ def data_plot_image(request, type):
 	plt.xlabel(xlabel)
 	plt.ylabel(ylabel)
 
-	#canvas = FigureCanvas(fig)
+	plt.savefig("sciencefrontend/static/img/picplot.png")
+	plt.savefig("sciencefrontend/static/img/picplot.pdf")
+	plt.savefig("sciencefrontend/static/img/picplot.svg")
 
-	if type == "png":
-		plt.savefig("sciencefrontend/static/img/picplot.png")
-		#response = HttpResponse(content_type="image/png")
-		#canvas.print_png(response)
-	elif type == "pdf":
-		response = HttpResponse(content_type="application/pdf")
-		canvas.print_pdf(response)
-	elif type == "svg":
-		response = HttpResponse(content_type="image/x-svg")
-		canvas.print_svg(response)
-	else:
-		response = None
 	
-	return HttpResponse("/static/img/picplot.png")
+	return HttpResponse("/static/img/picplot")

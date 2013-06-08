@@ -17,7 +17,7 @@
 textarea{resize: none;}
 textarea[readonly] {background:#222222;}
 
-.gui {min-height:300px;}
+.gui {min-height:300px;padding: 25px;}
 
 .nav li a {color:#ffffff;}
 .navcontainer {margin-bottom:60px;}

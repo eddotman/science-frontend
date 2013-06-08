@@ -1,5 +1,8 @@
 
 class ScriptBase:
+	"""
+	Common behaviour shared by all ScienceFrontend scripts.
+	"""	
 
 	def __init__(self, name):
 		self.name = name

@@ -9,6 +9,13 @@ from django.http import HttpResponse
 
 
 def function_plot(request):
+	"""
+	Renders main view.
+
+	RETURNS:
+
+		a Django render() HttpResponse object
+	"""
 
 	s = ScriptBase("function_plot")
 
@@ -16,6 +23,22 @@ def function_plot(request):
 
 
 def function_plot_image(request, funct, xmin, xmax, xincrem, type):
+	"""
+	Creates an HttpResponse PNG/PDF/SVG plot of a given function_plot.
+
+	ARGUMENTS:
+
+		funct: the function to be plotted.
+		xmin: minimum x value.
+		xmax: maximum x value.
+		xincrem: the x step value.
+		type: the type of response to return.
+
+	RETURNS:
+
+		An HttpResponse of the appropriate type (PNG/PDF/SVG) containing the plot.
+
+	"""
 
 	fig = Figure(facecolor=(1,1,1))
 	ax = fig.add_subplot(111)
