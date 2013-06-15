@@ -1,42 +1,38 @@
 {% include "head.html" %}
 <body>
 	<div class="navcontainer">
-		<ul class="nav nav-justified navbar-fixed-top bgcolor-red">
+		<ul class="nav nav-justified navbar-fixed-top bgcolor-black">
 			<li><a href="/"><strong>ScienceFrontend</strong></a></li>
 			<li><a href="/about/">About</a></li>
 			<li><a href="/scripts/">Scripts</a></li>
 			<li><a href="/contact/">Contact</a></li>
 		</ul>
 	</div>
-	<div class="container">
-		
-		<div class="row">
-			<div class = "col-small-span-12">
-				<p>
-					<strong>ScienceFrontend</strong> provides a <em>unified front-end experience</em> for various scientific scripts. This webapp is currently <strong>under development</strong>. You can check out the progress <a href="https://gist.github.com/eddotman/5426562">here</a>.
-				</p>
-				
-				<hr>
-			</div>
-		</div>
-		<div class="row bgcolor-lightgrey img-rounded">
-			<div class="col-small-span-8">
-				<div class="search">
-					<input type="text" placeholder="Search scripts...">
-				</div>
-			</div>
-			<div class="col-small-span-4 curr-script">
-				<pre>Current: <strong><a href="{{script_link}}">{{script_name}}</a></strong></pre>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-small-span-12">
-				<div class="gui">
-					{% block script_gui %}{% endblock %}
-				</div>
+	<div class="row bgcolor-lightgrey">
+		<div class="col-small-span-8">
+			<div class="search">
+				<input type="text" placeholder="Search scripts...">
 			</div>
 		</div>
+		<div class="col-small-span-4 curr-script">
+			<pre>Current: <strong><a href="{{script_link}}">{{script_name}}</a></strong></pre>
+		</div>
+	</div>
+
+	{%block outside_block %}
+	{%endblock%}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-small-span-12 gui">
+
+				{% block script_gui %}{% endblock %}
+
+			</div>
+		</div>
+		
+		<!-- Disabling cmd shell for now... 
 		<div class="row">
 			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
 			<h3>Command Shell</h3>
@@ -45,6 +41,7 @@
 			<br>
 			</div>
 		</div>
+		-->
 
 		<hr>
 

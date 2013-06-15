@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block script_gui %}
+<div class="bgcolor-darkgrey jumbotron">
+<h1>{{script_name}}</h1>
+<br>
+<pre><strong>{{script_name}}</strong> computes absorption lengths and other data for XAFS samples.</pre> 
+</div>
+
+
+<h2>Input data:</h2>
+
+<form method="post" id="inputform">{% csrf_token %}
+  <p><input type="text" placeholder="Enter the compound formula (e.g. Na_2HAsO_4.7H_2O or Ni(OH)_2)"></p>
+  <p><input type="text" placeholder="Enter the the photon energy in eV (e.g. 12000)"></p>
+	<p><input type="text" placeholder="Enter the BN dilution fraction (e.g. 0.5 or 0 for no dilution)"></p>
+	
+	<br>
+
+	<input class="btn btn-success" type="submit" value="Compute my data!" >
+
+</form>
+
+
+{% endblock %}

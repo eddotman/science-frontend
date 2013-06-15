@@ -2,14 +2,17 @@
 
 .submit-btn {margin: 15px auto; padding:0; width:90%;}
 
+.dotlink a {text-decoration:none; color: #ffffff; border-bottom: 1px #ffffff dotted;}
+.noround {border-radius:0;}
+
 .bgcolor-red {background: #c0392b; color: #ffffff;}
 .bgcolor-green {background: #27ae60; color: #ffffff;}
 .bgcolor-blue {background: #3498db; color: #ffffff;}
 .bgcolor-darkblue {background: #2c3e50; color: #ffffff;}
 .bgcolor-grey {background: #7f8c8d; color: #ffffff;}
 .bgcolor-darkgrey {background: #222222; color: #ffffff;}
-.bgcolor-yellow {background: #f1c40f; color: #555555;}
 .bgcolor-lightgrey {background: #ecf0f1; color: #777777;}
+.bgcolor-black {background: #000000; color: #ffffff;}
 
 .shell-in {border: none; box-shadow: none; border-radius:none; overflow:hidden; height:10px; font-family: "consolas", "courier"; color:#dddddd; margin-bottom: 15px; margin-top:5px; resize:none;}
 .shell-out {border: none; box-shadow: none; border-radius:none; height:190px; font-family: "consolas", "courier"; color:#d35400; padding: 10px; resize:none; text-align:left;}
@@ -17,10 +20,13 @@
 textarea{resize: none;}
 textarea[readonly] {background:#222222;}
 
-.gui {min-height:300px;padding: 25px;}
+.gui {min-height:300px; padding:25px 0; margin: 0;}
 
 .nav li a {color:#ffffff;}
-.navcontainer {margin-bottom:60px;}
+.navcontainer {margin-bottom:40px;}
+.nav>li>a:focus{text-decoration:none;background-color:#c0392b;}
+
+.padded-right{padding-right: 20px;}
 
 .search {margin-top: 20px; margin-bottom:20px;}
 .search input[type="text"] {font-size:20px;}

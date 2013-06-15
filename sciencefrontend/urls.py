@@ -13,6 +13,7 @@ from scripts.contact import *
 #Import scripts
 from scripts.function_plot import *
 from scripts.data_plot import *
+from scripts.xafs_sample_prep import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -33,6 +34,8 @@ urlpatterns = patterns('',
 
     url(r'^data_plot/$', data_plot),
     url(r'^data_plot/plot/$', data_plot_image),
+
+    url(r'^xafs_sample_prep/$', xafs_sample_prep),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),
