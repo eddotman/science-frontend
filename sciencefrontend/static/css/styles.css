@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {background: #eeeeee;}
-
+html, body, p {font-family:"Open Sans", "arial";}
 h1, h2, h3 {font-family: 'Lato', sans-serif;}
 
 .font-roman {font-family: "Georgia", "times";}
@@ -21,8 +22,10 @@ h1, h2, h3 {font-family: 'Lato', sans-serif;}
 .shell-in {border: none; box-shadow: none; border-radius:none; overflow:hidden; height:10px; font-family: "consolas", "courier"; color:#dddddd; margin-bottom: 15px; margin-top:5px; resize:none;}
 .shell-out {border: none; box-shadow: none; border-radius:none; height:190px; font-family: "consolas", "courier"; color:#d35400; padding: 10px; resize:none; text-align:left;}
 
-textarea{resize: none;}
-textarea[readonly] {background:#222222;}
+textarea {resize: none;}
+button {margin:15px;}
+
+#result {text-align: center;}
 
 .gui {min-height:300px; padding:25px 0; margin: 0;}
 
