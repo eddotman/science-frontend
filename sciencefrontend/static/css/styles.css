@@ -1,4 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
 body {background: #eeeeee;}
+
+.jumbotron h1, .jumbotron h2 {font-family: 'Lato', sans-serif;}
 
 .font-roman {font-family: "Georgia", "times";}
 
