@@ -17,10 +17,10 @@ def data_plot(request):
 
 		a Django render() HttpResponse object
 	"""
+	des = "plots two-column data as a high-quality graph (PNG + PDF + SVG)."
+	s = ScriptBase("data_plot", des)
 
-	s = ScriptBase("data_plot")
-
-	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link})
+	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link, 'script_des': s.script_des})
 
 
 def data_plot_image(request):

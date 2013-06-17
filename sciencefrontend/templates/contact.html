@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
+{% block outside_block %}
+
+<div class="bgcolor-darkgrey jumbotron noround text-center hugepad">
+	<h1>Have any questions?</h1>
+	<h2>Drop me a line: <a href="http://www.twitter.com/eddotman/">@eddotman</a></h2>
+</div>
+
+{% endblock %}
+
 {% block script_gui %}
 
 <div class="jumbotron">
-	<h1>Have any questions?</h1>
-	<h3>Drop me a line: <a href="http://www.twitter.com/eddotman/">@eddotman</a></h3>
-</div>
-
-<div class="bgcolor-darkgrey jumbotron dotlink">
 	<h1>Want to help me out?</h1>
 	<h3>Fork the code on <a href="https://github.com/eddotman/science-frontend">Github</a></h3>
 </div>

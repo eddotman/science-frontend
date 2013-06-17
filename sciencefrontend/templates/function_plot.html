@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block script_gui %}
-<div class="bgcolor-darkgrey jumbotron">
-<h1>{{script_name}}</h1>
-<br>
-<pre><strong>function_plot.py</strong> plots a function as a high-quality graph (PNG + PDF + SVG).</pre>
-</div>
+{% block outside_block %}
 
+{% include "script_head.html" %}
+
+{% endblock %}
+
+{% block script_gui %}
 
 <h2>Input plotting data:</h2>
 

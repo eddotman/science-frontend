@@ -10,6 +10,7 @@ h1, h2, h3 {font-family: 'Lato', sans-serif;}
 .submit-btn {margin: 15px auto; padding:0; width:90%;}
 
 .dotlink a {text-decoration:none; color: #ffffff; border-bottom: 1px #ffffff dotted;}
+.nolink a {text-decoration: none; color:inherit;}
 .noround {border-radius:0;}
 
 .bgcolor-red {background: #c0392b; color: #ffffff;}
@@ -33,11 +34,12 @@ button {margin:15px;}
 .navcontainer {margin-bottom:40px;}
 .nav>li>a:focus{text-decoration:none;background-color:#c0392b;}
 
-.padded-right{padding-right: 60px; padding-left: 40px;}
+.padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
 
-.search {margin-top: 20px; margin-bottom:20px;}
-.search input[type="text"] {font-size:20px;}
+.search {margin-top: 15px; margin-bottom:15px;}
+.search input[type="text"] {font-size:18px; padding:8px;}
 
-.curr-script {margin-top:19px; min-height:34px;}
+.curr-script {margin-top:15px;}
 
 .hugepad {padding: 220px 0;}
+.centred {margin: 0 auto;}

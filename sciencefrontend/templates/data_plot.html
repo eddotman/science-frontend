@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% block script_gui %}
-<div class="bgcolor-darkgrey jumbotron">
-<h1>{{script_name}}</h1>
-<br>
-<pre><strong>data_plot.py</strong> plots two-column data as a high-quality graph (PNG + PDF + SVG). Reserve the first line for axis labels.</pre> 
-</div>
 
+{% block outside_block %}
+
+{% include "script_head.html" %}
+
+{% endblock %}
+
+{% block script_gui %}
 
 <h2>Input plotting data:</h2>
 

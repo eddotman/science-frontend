@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
-{% block script_gui %}
+{% block outside_block %}
 
-<div class="bgcolor-darkgrey jumbotron dotlink">
+<div class="bgcolor-darkgrey jumbotron noround text-center hugepad">
 	<h1>Browse All Scripts</h1>
 </div>
+
+{% endblock %}
+
+{% block script_gui %}
 
 <div class="jumbotron">
 	<h3><a href="/data_plot/">data_plot</a></h3>

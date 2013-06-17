@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% block script_gui %}
-<div class="bgcolor-darkgrey jumbotron">
-<h1>{{script_name}}</h1>
-<br>
-<pre><strong>{{script_name}}</strong> computes absorption lengths and other data for XAFS samples.</pre> 
-</div>
 
+{% block outside_block %}
+
+{% include "script_head.html" %}
+
+{% endblock %}
+
+{% block script_gui %}
 
 <h2>Input data:</h2>
 

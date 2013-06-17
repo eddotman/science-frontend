@@ -13,6 +13,7 @@ def xafs_sample_prep(request):
 		a Django render() HttpResponse object
 	"""
 
-	s = ScriptBase("xafs_sample_prep")
+	des = "computes absorption lengths and other data for XAFS samples."
+	s = ScriptBase("xafs_sample_prep", des)
 
-	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link})
+	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link, 'script_des':s.script_des})
