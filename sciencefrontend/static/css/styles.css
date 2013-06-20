@@ -2,8 +2,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {background: #eeeeee;}
-html, body, p {font-family:"Open Sans", "arial";}
-h1, h2, h3 {font-family: 'Lato', sans-serif;}
+html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
+h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 .font-roman {font-family: "Georgia", "times";}
 
