@@ -36,7 +36,7 @@ urlpatterns = patterns('',
     url(r'^data_plot/plot/$', data_plot_image),
 
     url(r'^xafs_sample_prep/$', xafs_sample_prep),
-    url(r'^xafs_sample_prep/cross$', get_xcross),
+    url(r'^xafs_sample_prep/abslen/$', get_abslen),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),

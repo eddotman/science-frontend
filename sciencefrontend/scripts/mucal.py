@@ -75,6 +75,10 @@ name_z = _mucal.name_z
 def mucal(*args):
   return _mucal.mucal(*args)
 mucal = _mucal.mucal
+
+def get_total_xsec(*args):
+  return _mucal.get_total_xsec(*args)
+get_total_xsec = _mucal.get_total_xsec
 # This file is compatible with both classic and new-style classes.
 
 

@@ -1675,6 +1675,20 @@ int mucal(char *name, int ZZ, double ephot, char unit, int pflag,
   return err;
 }
 
+float get_total_xsec(char *name, double ephot)
+{
+  //Return variables for mucal
+  double retEnergy[9];
+  double xsec[11];
+  double fl_yield[4];
+  int print_flag = 1;
+  char err_msg[100];
+
+  mucal(name, 0, ephot, 'c', print_flag, retEnergy, xsec, fl_yield, err_msg);
+
+  return xsec[3];
+}
+
 #undef ZMAX
 #undef NELEM
 

@@ -3250,6 +3250,16 @@ SWIG_AsVal_char (PyObject * obj, char *val)
   return res;
 }
 
+
+  #define SWIG_From_double   PyFloat_FromDouble 
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_float  (float value)
+{    
+  return SWIG_From_double  (value);
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3378,10 +3388,45 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_get_total_xsec(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  char *arg1 = (char *) 0 ;
+  double arg2 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:get_total_xsec",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "get_total_xsec" "', argument " "1"" of type '" "char *""'");
+  }
+  arg1 = (char *)(buf1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "get_total_xsec" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = (double)(val2);
+  result = (float)get_total_xsec(arg1,arg2);
+  resultobj = SWIG_From_float((float)(result));
+  if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"name_z", _wrap_name_z, METH_VARARGS, NULL},
 	 { (char *)"mucal", _wrap_mucal, METH_VARARGS, NULL},
+	 { (char *)"get_total_xsec", _wrap_get_total_xsec, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

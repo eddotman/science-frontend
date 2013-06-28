@@ -8,3 +8,4 @@
 int name_z(char *name);
 int mucal(char *name, int ZZ, double ephot, char unit, int pflag,
 	  double *energy, double *xsec, double *fluo, char *errmsg);
+float get_total_xsec(char *name, double ephot);

@@ -5,6 +5,7 @@ setup.py file for SWIG mucal
 """
 
 from distutils.core import setup, Extension
+import numpy
 
 
 mucal_module = Extension('_mucal',
@@ -17,4 +18,5 @@ setup (name = 'mucal',
        description = """Simple swig mucal from docs""",
        ext_modules = [mucal_module],
        py_modules = ["mucal"],
+       include_dirs = [numpy.get_include(),'.'],
        )
