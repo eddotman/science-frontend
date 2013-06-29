@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {background: #eeeeee;}
+html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
+h1, h2, h3 {font-family: "Lato"; font-weight:300;}
+
+.font-roman {font-family: "Georgia", "times";}
+
+.submit-btn {margin: 15px auto; padding:0; width:90%;}
+
+.dotlink a {text-decoration:none; color: #ffffff; border-bottom: 1px #ffffff dotted;}
+.nolink a {text-decoration: none; color:inherit;}
+.noround {border-radius:0;}
+
+.bgcolor-red {background: #c0392b; color: #ffffff;}
+.bgcolor-green {background: #27ae60; color: #ffffff;}
+.bgcolor-grey {background: #7f8c8d; color: #ffffff;}
+.bgcolor-darkgrey {background: #222222; color: #ffffff;}
+.bgcolor-lightgrey {background: #ecf0f1; color: #777777;}
+.bgcolor-black {background: #000000; color: #ffffff;}
+
+.shell-in {border: none; box-shadow: none; border-radius:none; overflow:hidden; height:10px; font-family: "consolas", "courier"; color:#dddddd; margin-bottom: 15px; margin-top:5px; resize:none;}
+.shell-out {border: none; box-shadow: none; border-radius:none; height:190px; font-family: "consolas", "courier"; color:#d35400; padding: 10px; resize:none; text-align:left;}
+
+textarea {resize: none;}
+button {margin:15px;}
+
+#result {text-align: center;}
+
+.gui {min-height:300px; padding:25px 0; margin: 0;}
+
+.nav li a {color:#ffffff;}
+.navcontainer {margin-bottom:40px;}
+.nav>li>a:focus{text-decoration:none;background-color:#c0392b;}
+
+.padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
+
+.search {margin-top: 15px; margin-bottom:15px;}
+.search input[type="text"] {font-size:18px; padding:8px;}
+
+.curr-script {margin-top:15px;}
+
+.hugepad {padding: 220px 0;}
+.centred {margin: 0 auto;}

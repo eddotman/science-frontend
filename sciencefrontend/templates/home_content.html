@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block outside_block %}
+<div class="bgcolor-red jumbotron noround text-center hugepad">
+	<h1>Welcome to ScienceFrontend</h1>
+	<h3><strong>ScienceFrontend</strong> allows for simple, unified interaction with scientific scripts.</h3>
+</div>
+{% endblock %}
+
+{% block script_gui %}
+
+<div class="row">
+	<div class="jumbotron">
+		<div class="col-small-span-3">
+			<img class="pull-right" src="/static/img/internet.svg">
+		</div>
+		<div class="col-small-span-9 pull-left">
+			<h2>Scripting without dependencies!</h2>
+			<p><strong>ScienceFrontend</strong> gives you the freedom to compute from a web browser.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="jumbotron">
+		<div class="col-small-span-3">
+			<img class="pull-right" src="/static/img/code.svg">
+		</div>
+		<div class="col-small-span-9 pull-left">
+			<h2>No more coding!</h2>
+			<p><strong>ScienceFrontend</strong> lets you do science without the command line.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="jumbotron">
+		<div class="col-small-span-3">
+			<img class="pull-right" src="/static/img/lock.svg">
+		</div>
+		<div class="col-small-span-9 pull-left">
+			<h2>Your data is secure!</h2>
+			<p><strong>ScienceFrontend</strong> doesn't store user data or personal info.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="jumbotron">
+		<div class="col-small-span-3">
+			<img class="pull-right" src="/static/img/earth.svg">
+		</div>
+		<div class="col-small-span-9 pull-left">
+			<h2>Everything is open-source!</h2>
+			<p><strong>ScienceFrontend</strong> only uses scripts that are 100% open-source.</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% include "head.html" %}
+<body>
+	<div class="navcontainer">
+		<ul class="nav nav-justified navbar-fixed-top bgcolor-black">
+			<li><a href="/"><strong>ScienceFrontend</strong></a></li>
+			<li><a href="/about/">About</a></li>
+			<li><a href="/scripts/">Scripts</a></li>
+			<li><a href="/contact/">Contact</a></li>
+		</ul>
+	</div>
+
+	<div class="row bgcolor-lightgrey">
+		<div class="col-small-span-7">
+			<div class="search">
+				<input type="text" placeholder="Search scripts...">
+			</div>
+		</div>
+		<div class="col-small-span-5 curr-script">
+			<pre>Current: <strong><a href="{{script_link}}">{{script_name}}</a></strong></pre>
+		</div>
+	</div>
+
+	{%block outside_block %}
+	{%endblock%}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-small-span-12 gui">
+
+				{% block script_gui %}{% endblock %}
+
+			</div>
+		</div>
+		
+		<!-- Disabling cmd shell for now... 
+		<div class="row">
+			<div class="col-small-span-12 bgcolor-darkblue img-rounded">
+			<h3>Command Shell</h3>
+			<textarea class="bgcolor-darkgrey shell-out img-rounded" readonly>Command Shell Interface (type 'help' for help)</textarea>
+			<input type="text" class="shell-in" placeholder="Type commands...">
+			<br>
+			</div>
+		</div>
+		-->
+
+		<hr>
+
+		<div class="footer">
+			<div class="row">
+				<div class="col-small-span-4">
+					<a href="https://github.com/eddotman/science-frontend"><img style="background:#222222" src="{{STATIC_URL}}img/github.png"></a>
+					<a href="https://twitter.com/eddotman"><img style="background:#222222" src="{{STATIC_URL}}img/twitter.png"></a>
+				</div>
+				
+				<div class="col-small-span-8">
+					<h3 class="pull-right">Created by <a href="http://www.edwardkim.name">Edward Kim</a></h3>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+</body>
+</html>
