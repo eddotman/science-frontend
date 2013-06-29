@@ -9,7 +9,7 @@ import numpy
 
 
 mucal_module = Extension('_mucal',
-                           sources=['sciencefrontend/scripts/mucal_wrap.c', 'sciencefrontend/scripts/mucal.c'],
+                           sources=['mucal_wrap.c', 'mucal.c'],
                            )
 
 setup (name = 'mucal',
