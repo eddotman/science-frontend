@@ -28,7 +28,7 @@ def get_abslen(request):
 
 	RETURNS:
 
-		Total xray absorption cross section.
+		Total xray absorption length.
 	"""
 
 	if request.method == "POST":
