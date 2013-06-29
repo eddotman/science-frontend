@@ -20,9 +20,10 @@ $(document).ready(function() {
         });
 
         var elem = $("#elem").val();
-       	var ephot = $("#ephot").val();
+        var ephot = $("#ephot").val();
+       	var dens = $("#dens").val();
 
-        var jqxhr = $.post("/xafs_sample_prep/abslen/", {'elem': elem, 'ephot': ephot})
+        var jqxhr = $.post("/xafs_sample_prep/abslen/", {'elem': elem, 'ephot': ephot, 'dens': dens})
         .done(function(data) { 
             $('#result').html("<h3>Total X-ray Absorption Length: " + data + " microns.</h3>"); 
         })

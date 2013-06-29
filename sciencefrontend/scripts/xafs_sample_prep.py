@@ -34,7 +34,8 @@ def get_abslen(request):
 	if request.method == "POST":
 		elem = str(request.POST['elem'])
 		ephot = float(request.POST['ephot'])
-		abs_length= round(1/get_total_xsec(elem, ephot)*10000, 2) #microns
+		dens = float(request.POST['dens'])
+		abs_length= round(1/(dens*get_total_xsec(elem, ephot))*10000, 2) #microns
 
 		return HttpResponse(abs_length)
 	else:
