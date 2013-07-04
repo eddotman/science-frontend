@@ -2,6 +2,7 @@ from script_base import ScriptBase
 from django.shortcuts import render
 from django.http import HttpResponse
 from mucal import *
+from periodictable import *
 
 def xafs_sample_prep(request):
 	"""
@@ -21,10 +22,11 @@ def get_abslen(request):
 	"""
 	Computes the relevant x-ray absorption data.
 
-	ARGUMENTS:
+	POSTDATA:
 	
-		elem: Element chemical symbol.
+		chem: Element chemical formula.
 		ephot: Photon energy (incoming) in keV.
+		dens: Compound density in g/cc
 
 	RETURNS:
 
@@ -32,10 +34,29 @@ def get_abslen(request):
 	"""
 
 	if request.method == "POST":
-		elem = str(request.POST['elem'])
+		
+		#Get POSTDATA
+		chem = str(request.POST['chem'])
 		ephot = float(request.POST['ephot'])
 		dens = float(request.POST['dens'])
-		abs_length= round(1/(dens*get_total_xsec(elem, ephot))*10000, 2) #microns
+
+		#Parse formula
+		form = formula(chem)
+
+		#Compute molecular mass
+		mass = 0.0
+
+		for elem in form.atoms:
+			mass += form.atoms[elem]*elem.mass
+
+		#Compute total mu
+		mu = 0.0
+		for elem in form.atoms:
+			frac = (form.atoms[elem]*elem.mass) / mass
+			mu += frac * get_total_xsec(elem.symbol, ephot)
+		mu *= dens
+
+		abs_length= round((1/mu) * 10000, 2) #microns
 
 		return HttpResponse(abs_length)
 	else:
