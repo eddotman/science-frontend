@@ -66,7 +66,6 @@ def get_abslen(request):
 		for elem in form.atoms:
 			frac = (form.atoms[elem]*elem.mass) / mass
 			mu += frac * get_total_xsec(elem.symbol, ephot)
-		mu *= dens
 
 		#Perform dilution with BN if needed
 		if str(bn) != "" and 0 < bn < 1:
@@ -75,10 +74,14 @@ def get_abslen(request):
 			frac_b = B.mass / bn_mass
 			frac_n = N.mass / bn_mass
 
-			mu_bn = bn * bn_dens * (frac_b * get_total_xsec(B.symbol, ephot) + frac_n * get_total_xsec(N.symbol, ephot))
-			mu = (1 - bn) * mu + mu_bn
+			dens = (1 - bn) * dens + bn * bn_dens
+
+			mu_bn = (frac_b * get_total_xsec(B.symbol, ephot) + frac_n * get_total_xsec(N.symbol, ephot))
+			mu = (1 - bn) * mu + bn * mu_bn
 
 			res += "<tr><td>BN Dilution Fraction:</td><td>" + str(bn) + "</td></tr>"
+
+		mu *= dens
 
 		res += "<tr><td>Linear Absorption Coefficient:</td><td>" + str(mu) + " 1/cm </td></tr>"
 
