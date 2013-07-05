@@ -26,7 +26,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 textarea {resize: none;}
 button {margin:15px;}
 
-#result {text-align: center;}
+#result {width: 60%; margin: 0 auto;}
 
 .gui {min-height:300px; padding:25px 0; margin: 0;}
 

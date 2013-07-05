@@ -21,14 +21,15 @@ $(document).ready(function() {
 
         var chem = $("#chem").val();
         var ephot = $("#ephot").val();
-       	var dens = $("#dens").val();
+        var dens = $("#dens").val();
+       	var bn = $("#bn").val();
 
-        var jqxhr = $.post("/xafs_sample_prep/abslen/", {'chem': chem, 'ephot': ephot, 'dens': dens})
+        var jqxhr = $.post("/xafs_sample_prep/abslen/", {'chem': chem, 'ephot': ephot, 'dens': dens, 'bn': bn})
         .done(function(data) { 
-            $('#result').html("<h3>Total X-ray Absorption Length: " + data + " microns.</h3>"); 
+            $('#result').html("<h3>" + data + "</h3>"); 
         })
         .fail(function() { 
-            $('#result').html('<h3>Something went wrong! Please fix your input and try again.</h3>')
+            $('#result').html('<h3>Server error! Please try again.</h3>')
         });
 	
     });

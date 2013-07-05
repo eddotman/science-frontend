@@ -27,27 +27,39 @@ def get_abslen(request):
 		chem: Element chemical formula.
 		ephot: Photon energy (incoming) in keV.
 		dens: Compound density in g/cc
+		bn: Boron Nitride dilution fraction (between 0-1)
 
 	RETURNS:
 
-		Total xray absorption length.
+		X-ray data as an HTTPresponse string.
 	"""
 
 	if request.method == "POST":
 		
-		#Get POSTDATA
-		chem = str(request.POST['chem'])
-		ephot = float(request.POST['ephot'])
-		dens = float(request.POST['dens'])
+		res = "<table class='table table-bordered'>"
+
+		try:
+			#Get POSTDATA
+			chem = str(request.POST['chem'])
+			ephot = float(request.POST['ephot'])
+			dens = float(request.POST['dens'])
+			bn = float(request.POST['bn'])
+		except:
+			res = "Input format error! Please fix and retry."
+			return HttpResponse(res)
+
 
 		#Parse formula
 		form = formula(chem)
+		res += "<tr><td>Compound:</td><td>" + chem + "</td></tr>"
 
 		#Compute molecular mass
 		mass = 0.0
 
 		for elem in form.atoms:
-			mass += form.atoms[elem]*elem.mass
+			mass += form.atoms[elem]*elem.mass 
+
+		res += "<tr><td>Molecular Mass:</td><td>" + str(mass) + " g/mol </td></tr>"
 
 		#Compute total mu
 		mu = 0.0
@@ -56,8 +68,26 @@ def get_abslen(request):
 			mu += frac * get_total_xsec(elem.symbol, ephot)
 		mu *= dens
 
-		abs_length= round((1/mu) * 10000, 2) #microns
+		#Perform dilution with BN if needed
+		if str(bn) != "" and 0 < bn < 1:
+			bn_mass = B.mass + N.mass
+			bn_dens = 2.29 #source: Sigma-Aldrich, BN powder ~1 micron, 98%
+			frac_b = B.mass / bn_mass
+			frac_n = N.mass / bn_mass
 
-		return HttpResponse(abs_length)
+			mu_bn = bn * bn_dens * (frac_b * get_total_xsec(B.symbol, ephot) + frac_n * get_total_xsec(N.symbol, ephot))
+			mu = (1 - bn) * mu + mu_bn
+
+			res += "<tr><td>BN Dilution Fraction:</td><td>" + str(bn) + "</td></tr>"
+
+		res += "<tr><td>Linear Absorption Coefficient:</td><td>" + str(mu) + " 1/cm </td></tr>"
+
+		#Compute absorption length
+		abs_length= round((1/mu) * 10000, 2) #microns
+		res += "<tr><td>Total X-ray Absorption Length:</td><td>" + str(abs_length) + " microns </td></tr>"
+
+		res += "</table>"
+
+		return HttpResponse(res)
 	else:
 		return HttpResponse("POSTdata must be used!")
