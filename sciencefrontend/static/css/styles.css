@@ -5,6 +5,33 @@ body {background: #eeeeee;}
 html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
 h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
+@media (min-width: 1px) and (max-width: 320px) {
+	p, li, input {font-size:60%;}
+	h1, h2, h3 {font-size: 80%;}
+	pre {font-size:40%;}
+
+	.hugepad {padding: 80px 0;}
+	.medpad {padding: 30px 0;}
+}
+
+@media (min-width: 321px) and (max-width: 600px) {
+	p, li, input {font-size:80%;}
+	h1, h2, h3 {font-size: 100%;}
+	pre {font-size:60%;}
+
+	.hugepad {padding: 120px 0;}
+	.medpad {padding: 50px 0;}
+}
+
+@media (min-width: 601px) {
+	p, li, input {font-size:100%;}
+	h1, h2, h3, {font-size:120%;}
+	pre {font-size: 90%;}
+
+	.hugepad {padding: 220px 0;}
+	.medpad {padding: 120px 0;}
+}
+
 .font-roman {font-family: "Georgia", "times";}
 
 .submit-btn {margin: 15px auto; padding:0; width:90%;}
@@ -20,9 +47,6 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 .bgcolor-lightgrey {background: #ecf0f1; color: #777777;}
 .bgcolor-black {background: #000000; color: #ffffff;}
 
-.shell-in {border: none; box-shadow: none; border-radius:none; overflow:hidden; height:10px; font-family: "consolas", "courier"; color:#dddddd; margin-bottom: 15px; margin-top:5px; resize:none;}
-.shell-out {border: none; box-shadow: none; border-radius:none; height:190px; font-family: "consolas", "courier"; color:#d35400; padding: 10px; resize:none; text-align:left;}
-
 textarea {resize: none;}
 button {margin:15px;}
 
@@ -37,10 +61,8 @@ button {margin:15px;}
 .padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
 
 .search {margin-top: 15px; margin-bottom:15px;}
-.search input[type="text"] {font-size:18px; padding:8px;}
+.search input[type="text"] {padding:8px;}
 
 .curr-script {margin-top:15px;}
 
-.hugepad {padding: 220px 0;}
-.medpad {padding: 120px 0;}
 .centred {margin: 0 auto;}
