@@ -18,9 +18,10 @@ def function_plot(request):
 	"""
 
 	des = "plots a function as a high-quality graph (PNG + PDF + SVG)."
-	s = ScriptBase("function_plot", des)
+	ttl = "Mathematical Function Plotter"
+	s = ScriptBase("function_plot", title=ttl, des=des)
 
-	return render(request, s.template, {'script_name': s.script_name,  'js_link': s.js_link, 'script_link': s.script_link, 'script_des':s.script_des})
+	return render(request, s.template, s.data)
 
 
 def function_plot_image(request, funct, xmin, xmax, xincrem, type):
