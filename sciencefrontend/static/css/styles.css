@@ -6,8 +6,8 @@ html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
 h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 1px) and (max-width: 320px) {
-	p, li, input {font-size:60%;}
-	h1, h2, h3 {font-size: 80%;}
+	p, li, input {font-size:50%;}
+	h1, h2, h3 {font-size: 60%; margin: 2px 0;}
 	pre {font-size:40%;}
 
 	.hugepad {padding: 80px 0;}
@@ -15,8 +15,8 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 }
 
 @media (min-width: 321px) and (max-width: 600px) {
-	p, li, input {font-size:80%;}
-	h1, h2, h3 {font-size: 100%;}
+	p, li, input {font-size:65%;}
+	h1, h2, h3 {font-size: 70%;margin: 5px 0;}
 	pre {font-size:60%;}
 
 	.hugepad {padding: 120px 0;}
