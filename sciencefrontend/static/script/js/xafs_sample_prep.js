@@ -4,7 +4,9 @@ function csrfSafeMethod(method) {
 }
 
 $(document).ready(function() {
-	function submit(){
+	$("#submit").click(function(event){
+
+        event.preventDefault();
 
         var csrftoken = $.cookie('csrftoken');
 
@@ -32,7 +34,9 @@ $(document).ready(function() {
 	
     });
 
-    function clear_fields(){
+    $("#clear").click(function(event){
+        event.preventDefault();
+
         document.getElementById('chem').value = "";
         document.getElementById('ephot').value = "";
         document.getElementById('dens').value = "";
