@@ -34,12 +34,10 @@ $(document).ready(function() {
 	
     });
 
-    $("#clear").click(function(event){
-        event.preventDefault();
-
-        $("#chem").reset();
-        $("#ephot").reset();
-        $("#dens").reset();
-        $("#bn").reset();
+    function clear_fields(){
+        document.getElementById('chem').reset()
+        document.getElementById('ephot').reset()
+        document.getElementById('dens').reset()
+        document.getElementById('bn').reset()
     });
 });
