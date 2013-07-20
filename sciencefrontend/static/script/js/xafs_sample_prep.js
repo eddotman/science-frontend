@@ -33,4 +33,11 @@ $(document).ready(function() {
         });
 	
     });
+
+    $("#clear").click(function(event){
+        $("#chem").val() = "";
+        $("#ephot").val() = "";
+        $("#dens").val() = "";
+        $("#bn").val() = "";
+    });
 });
