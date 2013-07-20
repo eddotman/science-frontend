@@ -35,9 +35,9 @@ $(document).ready(function() {
     });
 
     function clear_fields(){
-        document.getElementById('chem').reset()
-        document.getElementById('ephot').reset()
-        document.getElementById('dens').reset()
-        document.getElementById('bn').reset()
+        document.getElementById('chem').value = "";
+        document.getElementById('ephot').value = "";
+        document.getElementById('dens').value = "";
+        document.getElementById('bn').value = "";
     });
 });
