@@ -4,9 +4,7 @@ function csrfSafeMethod(method) {
 }
 
 $(document).ready(function() {
-	$("#inputform").submit(function(event){
-
-        event.preventDefault();
+	function submit(){
 
         var csrftoken = $.cookie('csrftoken');
 
