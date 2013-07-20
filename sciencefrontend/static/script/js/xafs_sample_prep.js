@@ -35,6 +35,8 @@ $(document).ready(function() {
     });
 
     $("#clear").click(function(event){
+        event.preventDefault();
+        
         $("#chem").val() = "";
         $("#ephot").val() = "";
         $("#dens").val() = "";
