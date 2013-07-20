@@ -34,7 +34,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 .font-roman {font-family: "Georgia", "times";}
 
-.submit-btn {margin: 15px auto; padding:0; width:90%;}
+.submit-btn {margin: 15px auto; padding:0; width:90%; text-align:center;}
 
 .dotlink a {text-decoration:none; color: #ffffff; border-bottom: 1px #ffffff dotted;}
 .nolink a {text-decoration: none; color:inherit;}
