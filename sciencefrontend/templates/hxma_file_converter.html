@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block outside_block %}
+	{% include "script_head.html" %}
+{% endblock %}
+
+{% block script_gui %}
+	<h2>Upload HXMA raw data file:</h2>
+
+	<form method="post" id="inputform">{% csrf_token %}
+		<p><input id="file" type="file" class="btn btn-primary" title="Upload a HXMA data file..."></p>
+
+		<br>
+		<button id="submit" class="btn btn-success submit-btn" onclick="submit()">Process my file</button>
+		
+
+	</form>
+
+	<div id="result">
+	</div>
+{% endblock %}

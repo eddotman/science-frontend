@@ -1,30 +1,24 @@
 {% extends "base.html" %}
-
 {% block outside_block %}
-
-{% include "script_head.html" %}
-
+	{% include "script_head.html" %}
 {% endblock %}
 
 {% block script_gui %}
+	<h2>Input data:</h2>
 
-<h2>Input data:</h2>
+	<form method="post" id="inputform">{% csrf_token %}
+		<p><input id="chem" type="text" placeholder="Enter the chemical formula (e.g. Au, Ni(OH)2, Na2HAsO4+7H2O)"></p>
+		<p><input id="ephot" type="text" placeholder="Enter the photon energy in keV (e.g. 12.1)"></p>
+		<p><input id="dens" type="text" placeholder="Enter the density in g/cc (e.g. 1.0)"></p>
+		<p><input id="bn" type="text" placeholder="Enter the BN dilution fraction (e.g. 0.5 for 50% or 0 for no dilution)"></p>
 
-<form method="post" id="inputform">{% csrf_token %}
-	<p><input id="chem" type="text" placeholder="Enter the chemical formula (e.g. Au, Ni(OH)2, Na2HAsO4+7H2O)"></p>
-	<p><input id="ephot" type="text" placeholder="Enter the photon energy in keV (e.g. 12.1)"></p>
-	<p><input id="dens" type="text" placeholder="Enter the density in g/cc (e.g. 1.0)"></p>
-	<p><input id="bn" type="text" placeholder="Enter the BN dilution fraction (e.g. 0.5 for 50% or 0 for no dilution)"></p>
+		<br>
+		<button id="clear" class="btn btn-primary submit-btn" onclick="clear_fields()">Reset Fields</button><br>
+		<button id="submit" class="btn btn-success submit-btn"onclick="submit()">Compute my data</button>
+		
 
-	<br>
-	<button id="clear" class="btn btn-primary submit-btn" onclick="clear_fields()">Reset Fields</button><br>
-	<button id="submit" class="btn btn-success submit-btn"onclick="submit()">Compute my data</button>
-	
+	</form>
 
-</form>
-
-<div id="result">
-</div>
-
-
+	<div id="result">
+	</div>
 {% endblock %}
