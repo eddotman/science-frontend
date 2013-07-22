@@ -9,17 +9,6 @@
 		</ul>
 	</div>
 
-	<div class="row bgcolor-lightgrey">
-		<div class="col-small-span-7">
-			<div class="search">
-				<input type="text" placeholder="Search scripts...">
-			</div>
-		</div>
-		<div class="col-small-span-5 curr-script">
-			<pre>Current: <strong><a href="{{script_link}}">{{script_name}}</a></strong></pre>
-		</div>
-	</div>
-
 	{%block outside_block %}
 	{%endblock%}
 
@@ -47,13 +36,10 @@
 
 		<div class="footer">
 			<div class="row">
-				<div class="col-small-span-6">
-					<a href="https://github.com/eddotman/science-frontend"><img style="background:#222222;float:left" src="{{STATIC_URL}}img/github.png"></a>
-					<a href="https://twitter.com/eddotman"><img style="background:#222222;float:left" src="{{STATIC_URL}}img/twitter.png"></a>
-				</div>
-				
-				<div class="col-small-span-6">
-					<h3 class="pull-right">Created by <a href="http://www.edwardkim.name">Edward Kim</a></h3>
+				<div class="col-small-span-12 text-right">
+					<h3>Created by <a href="http://www.edwardkim.name">Edward Kim</a></h3>
+					<p>[<a href="https://github.com/eddotman/science-frontend">Github</a>] 
+					[<a href="https://twitter.com/eddotman">Twitter</a>]</p>
 				</div>
 			</div>
 		</div>

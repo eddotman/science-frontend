@@ -7,8 +7,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 1px) and (max-width: 320px) {
 	p, li, input {font-size:50%;}
-	h1, h2, h3 {font-size: 60%; margin: 2px 0;}
-	pre {font-size:40%;}
+	h2, h3 {font-size: 60%; margin: 2px 0;}
 
 	.hugepad {padding: 80px 0;}
 	.medpad {padding: 30px 0;}
@@ -16,8 +15,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 321px) and (max-width: 600px) {
 	p, li, input {font-size:65%;}
-	h1, h2, h3 {font-size: 70%;margin: 5px 0;}
-	pre {font-size:60%;}
+	h2, h3 {font-size: 70%;margin: 5px 0;}
 
 	.hugepad {padding: 120px 0;}
 	.medpad {padding: 50px 0;}
@@ -25,14 +23,11 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 601px) {
 	p, li, input {font-size:100%;}
-	h1, h2, h3, {font-size:120%;}
-	pre {font-size: 90%;}
+	h2, h3, {font-size:120%;}
 
 	.hugepad {padding: 220px 0;}
 	.medpad {padding: 120px 0;}
 }
-
-.font-roman {font-family: "Georgia", "times";}
 
 .submit-btn {margin: 15px auto; padding:20px; width:100%; text-align:center;}
 
@@ -56,7 +51,7 @@ button {margin:15px;}
 
 .nav li a {color:#ffffff;}
 .navcontainer {margin-bottom:40px;}
-.nav>li>a:focus{text-decoration:none;background-color:#c0392b;}
+.nav>li>a:hover,.nav>li>a:focus{text-decoration:none;background:#f5f5f5;color:#c0392b;}
 
 .padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
 
