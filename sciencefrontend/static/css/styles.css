@@ -6,27 +6,27 @@ html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
 h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 1px) and (max-width: 320px) {
-	p, li, input {font-size:50%;}
-	h2, h3 {font-size: 60%; margin: 2px 0;}
+	p, li, input[type="text"] {font-size:65%;}
+	h2, h3 {font-size: 80%; margin: 2px 0;}
 
-	.hugepad {padding: 80px 0;}
-	.medpad {padding: 30px 0;}
+	.hugepad {padding: 80px 20px;}
+	.medpad {padding: 30px 20px;}
 }
 
 @media (min-width: 321px) and (max-width: 600px) {
-	p, li, input {font-size:65%;}
-	h2, h3 {font-size: 70%;margin: 5px 0;}
+	p, li,  input[type="text"] {font-size:75%;}
+	h2, h3 {font-size: 90%;margin: 5px 0;}
 
-	.hugepad {padding: 120px 0;}
-	.medpad {padding: 50px 0;}
+	.hugepad {padding: 120px 20px;}
+	.medpad {padding: 50px 20px;}
 }
 
 @media (min-width: 601px) {
-	p, li, input {font-size:100%;}
+	p, li,  input[type="text"] {font-size:100%;}
 	h2, h3, {font-size:120%;}
 
-	.hugepad {padding: 220px 0;}
-	.medpad {padding: 120px 0;}
+	.hugepad {padding: 220px 20px;}
+	.medpad {padding: 120px 20px;}
 }
 
 .submit-btn {margin: 15px auto; padding:20px; width:100%; text-align:center;}
@@ -47,7 +47,7 @@ button {margin:15px;}
 
 #result {width: 60%; margin: 0 auto;}
 
-.gui {min-height:300px; padding:25px 0; margin: 0;}
+.gui {min-height:300px; padding:25px 20px;}
 
 .nav li a {color:#ffffff;}
 .navcontainer {margin-bottom:40px;}
