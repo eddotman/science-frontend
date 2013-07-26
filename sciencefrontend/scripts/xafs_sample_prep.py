@@ -1,5 +1,5 @@
-from script_base import ScriptBase
 from django.shortcuts import render
+from sciencefrontend.models import Script
 from django.http import HttpResponse
 from mucal import *
 from periodictable import *
@@ -12,12 +12,18 @@ def xafs_sample_prep(request):
 
 		a Django render() HttpResponse object
 	"""
+	
+	try:
+		s = Script.objects.get(name='xafs_sample_prep')
+	except:
+		des = "computes absorption lengths and other data for XAFS samples."
+		ttl = "XAFS Sample Prep Calculator"
+		s = Script(name="xafs_sample_prep", ttl=ttl, des=des)
+		s.save()
 
-	des = "computes absorption lengths and other data for XAFS samples."
-	ttl = "XAFS Sample Prep Calculator"
-	s = ScriptBase("xafs_sample_prep", title=ttl, des=des)
+	data = s.get_data()
 
-	return render(request, s.template, s.data)
+	return render(request, data['template'], data)
 
 def get_abslen(request):
 	"""

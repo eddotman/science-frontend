@@ -1,5 +1,6 @@
 # Django settings for sciencefrontend project.
 import os
+import psycopg2
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
