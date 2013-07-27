@@ -31,7 +31,7 @@ urlpatterns = patterns('',
 
 	#Scripts
 	url(r'^function_plot/$', function_plot),
-	url(r'^function_plot/(?P<funct>.+)/(?P<xmin>.+)/(?P<xmax>.+)/(?P<xincrem>.+)/plot\.(?P<type>.+)$', function_plot_image),
+	url(r'^function_plot/(?P<funct>.+)/(?P<xmin>.+)/(?P<xmax>.+)/plot\.(?P<type>.+)$', function_plot_image),
 
     url(r'^data_plot/$', data_plot),
     url(r'^data_plot/plot/$', data_plot_image),

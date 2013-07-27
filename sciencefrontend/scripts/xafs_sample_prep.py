@@ -14,7 +14,7 @@ def xafs_sample_prep(request):
 	"""
 	
 	try:
-		s = Script.objects.get(name='xafs_sample_prep')
+		s = Script.objects.get(name="xafs_sample_prep")
 	except:
 		des = "computes absorption lengths and other data for XAFS samples."
 		ttl = "XAFS Sample Prep Calculator"

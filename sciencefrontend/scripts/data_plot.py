@@ -1,4 +1,4 @@
-from script_base import ScriptBase
+from sciencefrontend.models import Script
 from django.shortcuts import render
 
 from numpy import *
@@ -17,11 +17,18 @@ def data_plot(request):
 
 		a Django render() HttpResponse object
 	"""
-	des = "plots two-column data as a high-quality graph (PNG + PDF + SVG)."
-	ttl = "Data File Plotter"
-	s = ScriptBase("data_plot", title=ttl, des=des)
 
-	return render(request, s.template, s.data)
+	try:
+		s = Script.objects.get(name="data_plot")
+	except:
+		des = "plots two-column data as a high-quality graph (PNG + PDF + SVG)."
+		ttl = "Two-Column Data Plotter"
+		s = Script(name="data_plot", ttl=ttl, des=des)
+		s.save()
+
+	data = s.get_data()
+
+	return render(request, data['template'], data)
 
 
 def data_plot_image(request):

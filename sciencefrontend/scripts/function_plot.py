@@ -1,4 +1,4 @@
-from script_base import ScriptBase
+from sciencefrontend.models import Script
 from django.shortcuts import render
 
 from numpy import *
@@ -17,14 +17,20 @@ def function_plot(request):
 		a Django render() HttpResponse object
 	"""
 
-	des = "plots a function as a high-quality graph (PNG + PDF + SVG)."
-	ttl = "Mathematical Function Plotter"
-	s = ScriptBase("function_plot", title=ttl, des=des)
+	try:
+		s = Script.objects.get(name="function_plot")
+	except:
+		des = "plots a function as a high-quality graph (PNG + PDF + SVG)."
+		ttl = "Mathematical Function Plotter"
+		s = Script(name="function_plot", ttl=ttl, des=des)
+		s.save()
 
-	return render(request, s.template, s.data)
+	data = s.get_data()
+
+	return render(request, data['template'], data)
 
 
-def function_plot_image(request, funct, xmin, xmax, xincrem, type):
+def function_plot_image(request, funct, xmin, xmax, type):
 	"""
 	Creates an HttpResponse PNG/PDF/SVG plot of a given function_plot.
 
@@ -33,7 +39,6 @@ def function_plot_image(request, funct, xmin, xmax, xincrem, type):
 		funct: the function to be plotted.
 		xmin: minimum x value.
 		xmax: maximum x value.
-		xincrem: the x step value.
 		type: the type of response to return.
 
 	RETURNS:
@@ -45,6 +50,7 @@ def function_plot_image(request, funct, xmin, xmax, xincrem, type):
 	fig = Figure(facecolor=(1,1,1))
 	ax = fig.add_subplot(111)
 
+	xincrem = (float(xmax) - float(xmin))/1000.0
 	x = arange(float(xmin), float(xmax), float(xincrem))
 	y = eval(funct)
 

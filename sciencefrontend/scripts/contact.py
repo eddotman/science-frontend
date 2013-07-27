@@ -1,8 +1,16 @@
 from django.shortcuts import render
-from script_base import ScriptBase
+from sciencefrontend.models import Script
 
 def contact(request):
 	
-	s = ScriptBase("contact")
+	try:
+		s = Script.objects.get(name="contact")
+	except:
+		des = "_"
+		ttl = "_"
+		s = Script(name="contact", ttl=ttl, des=des)
+		s.save()
 
-	return render(request, s.template, {'script_name': s.script_name, 'script_link': s.script_link})
+	data = s.get_data()
+
+	return render(request, data['template'], data)

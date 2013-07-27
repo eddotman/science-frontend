@@ -13,20 +13,17 @@
 <form method="post" id="funcform">{% csrf_token %}
 	<p><input id="funct" type="text" placeholder="Enter a function (e.g. x**2, cos(x), sin(x)*cos(x), x+1)"></p>
 	<div class="row">
-		<div class="col-small-span-4">
+		<div class="col-small-span-6">
 			<input id="xmin" type="text" placeholder="Enter the minimum x-value (e.g. 0.0)">
 		</div>
-		<div class="col-small-span-4">
+		<div class="col-small-span-6">
 			<input id="xmax" type="text" placeholder="Enter the maximum x-value (e.g. 10.0)">
-		</div>
-		<div class="col-small-span-4">
-			<input id="xincrem" type="text" placeholder="Enter the x-increment (e.g. 0.01)">
 		</div>
 	</div>
 	
 	<br>
 
-	<input class="btn btn-success" type="submit" value="Plot my function!" >
+	<button id="submit" class="btn submit-btn btn-success"> Plot my function!</button>
 
 </form>
 

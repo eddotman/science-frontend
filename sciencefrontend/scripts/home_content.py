@@ -1,8 +1,16 @@
 from django.shortcuts import render
-from script_base import ScriptBase
+from sciencefrontend.models import Script
 
 def home_content(request):
 	
-	s = ScriptBase("home_content")
+	try:
+		s = Script.objects.get(name="home_content")
+	except:
+		des = "_"
+		ttl = "_"
+		s = Script(name="home_content", ttl=ttl, des=des)
+		s.save()
 
-	return render(request, s.template, {'script_name': s.script_name, 'script_link': s.script_link})
+	data = s.get_data()
+
+	return render(request, data['template'], data)

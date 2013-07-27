@@ -1,13 +1,12 @@
 $(document).ready(function() {
-	$("#funcform").submit(function(event){
+	$("#submit").click(function(event){
    	
    	event.preventDefault();
 
    	var funct = $("#funct").val();
    	var xmin = $("#xmin").val();
     var xmax = $("#xmax").val();
-   	var xincrem = $("#xincrem").val();
-   	var url = "/function_plot/" + funct + "/" + xmin + "/" + xmax + "/" + xincrem + "/plot";
+   	var url = "/function_plot/" + funct + "/" + xmin + "/" + xmax + "/plot";
    	var url_png = url + ".png";
 
 	$('#result_img').attr("src", url_png);

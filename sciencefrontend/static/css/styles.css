@@ -39,7 +39,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 .bgcolor-green {background: #27ae60; color: #ffffff;}
 .bgcolor-grey {background: #7f8c8d; color: #ffffff;}
 .bgcolor-darkgrey {background: #222222; color: #ffffff;}
-.bgcolor-lightgrey {background: #ecf0f1; color: #777777;}
+.bgcolor-white {background: #ffffff; color: #000000;}
 .bgcolor-black {background: #000000; color: #ffffff;}
 
 textarea {resize: none;}

@@ -1,4 +1,4 @@
-from script_base import ScriptBase
+from sciencefrontend.models import Script
 from django.shortcuts import render
 
 def hxma_file_converter(request):
@@ -10,8 +10,14 @@ def hxma_file_converter(request):
 		a Django render() HttpResponse object
 	"""
 
-	des = "converts a data file in HXMA (Canadian Light Source) format to a standard DAT file."
-	ttl = "HXMA Data File Converter"
-	s = ScriptBase("hxma_file_converter", title=ttl, des=des)
+	try:
+		s = Script.objects.get(name="hxma_file_converter")
+	except:
+		des = "converts a data file in HXMA (Canadian Light Source) format to a standard DAT file."
+		ttl = "HXMA Data File Converter"
+		s = Script(name="hxma_file_converter", ttl=ttl, des=des)
+		s.save()
 
-	return render(request, s.template, s.data)
+	data = s.get_data()
+
+	return render(request, data['template'], data)
