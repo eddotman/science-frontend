@@ -46,6 +46,7 @@ textarea {resize: none;}
 button {margin:15px;}
 
 #result {width: 60%; margin: 0 auto;}
+#readme {margin-top: 25px; padding: 30px; background: #ffffff; color: #333333; font-family: consolas, courier;}
 
 .gui {min-height:300px; padding:25px 20px;}
 
@@ -54,10 +55,5 @@ button {margin:15px;}
 .nav>li>a:hover,.nav>li>a:focus{text-decoration:none;background:#f5f5f5;color:#c0392b;}
 
 .padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
-
-.search {margin-top: 15px; margin-bottom:15px;}
-.search input[type="text"] {padding:8px;}
-
-.curr-script {margin-top:15px;}
 
 .centred {margin: 0 auto;}

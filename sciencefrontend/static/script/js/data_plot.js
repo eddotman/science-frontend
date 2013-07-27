@@ -5,7 +5,7 @@ function csrfSafeMethod(method) {
 }
 
 $(document).ready(function() {
-	$("#dataform").submit(function(event){
+	$("#submit").click(function(event){
 
         event.preventDefault();
 

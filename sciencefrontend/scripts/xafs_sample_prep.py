@@ -66,7 +66,7 @@ def get_abslen(request):
 		for elem in form.atoms:
 			mass += form.atoms[elem]*elem.mass 
 
-		res += "<tr><td>Molecular Mass:</td><td>" + str(mass) + " g/mol </td></tr>"
+		res += "<tr><td>Molecular Mass:</td><td>" + str(round(mass,2)) + " g/mol </td></tr>"
 
 		#Compute total mu
 		mu = 0.0
@@ -90,11 +90,11 @@ def get_abslen(request):
 
 		mu *= dens
 
-		res += "<tr><td>Linear Absorption Coefficient:</td><td>" + str(mu) + " 1/cm </td></tr>"
+		res += "<tr><td>Linear Absorption Coefficient:</td><td>" + str(round(mu,2)) + " 1/cm </td></tr>"
 
 		#Compute absorption length
 		abs_length= round((1/mu) * 10000, 2) #microns
-		res += "<tr><td>Total X-ray Absorption Length:</td><td>" + str(abs_length) + " microns </td></tr>"
+		res += "<tr><td>Total X-ray Absorption Length:</td><td>" + str(round(abs_length,2)) + " microns </td></tr>"
 
 		res += "</table>"
 
