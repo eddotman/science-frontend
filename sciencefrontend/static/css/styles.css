@@ -36,17 +36,18 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 .noround {border-radius:0;}
 
 .bgcolor-red {background: #c0392b; color: #ffffff;}
-.bgcolor-green {background: #27ae60; color: #ffffff;}
-.bgcolor-grey {background: #7f8c8d; color: #ffffff;}
 .bgcolor-darkgrey {background: #222222; color: #ffffff;}
 .bgcolor-white {background: #ffffff; color: #000000;}
 .bgcolor-black {background: #000000; color: #ffffff;}
 
-textarea {resize: none;}
+textarea {resize: none;width: 100%; padding: 10px;}
+input {width: 100%; border: 1px black solid;}
+input[type="text"] {width: 100%; padding: 8px; border: 1px black solid;}
 button {margin:15px;}
 
 #result {width: 60%; margin: 0 auto;}
 #readme {margin-top: 25px; padding: 30px; background: #ffffff; color: #333333; font-family: consolas, courier;}
+#footer {padding: 15px;}
 
 .gui {min-height:300px; padding:25px 20px;}
 

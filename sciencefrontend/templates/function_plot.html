@@ -12,14 +12,8 @@
 
 <form method="post" id="funcform">{% csrf_token %}
 	<p><input id="funct" type="text" placeholder="Enter a function (e.g. x**2, cos(x), sin(x)*cos(x), x+1)"></p>
-	<div class="row">
-		<div class="col-small-span-6">
-			<input id="xmin" type="text" placeholder="Enter the minimum x-value (e.g. 0.0)">
-		</div>
-		<div class="col-small-span-6">
-			<input id="xmax" type="text" placeholder="Enter the maximum x-value (e.g. 10.0)">
-		</div>
-	</div>
+	<p><input id="xmin" type="text" placeholder="Enter the minimum x-value (e.g. 0.0)"></p>
+	<p><input id="xmax" type="text" placeholder="Enter the maximum x-value (e.g. 10.0)"></p>
 	
 	<br>
 
