@@ -25,7 +25,7 @@ def xafs_sample_prep(request):
 
 	return render(request, data['template'], data)
 
-def get_abslen(request):
+def xafs_sample_prep_get_abslen(request):
 	"""
 	Computes the relevant x-ray absorption data.
 
