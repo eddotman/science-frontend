@@ -2,13 +2,6 @@
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.1.min.js"> </script>
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.cookie.js"> </script>
 <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap.min.js"> </script>
-<script type="text/javascript" src="{{STATIC_URL}}js/bootstrap.file-input.js"> </script>
-<script type="text/javascript" src="{{STATIC_URL}}js/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/jquery.iframe-transport.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/jquery.fileupload.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){$('input[type=file]').bootstrapFileInput();});
-</script>
 {% if js_link %}
 <script type="text/javascript" src="{{STATIC_URL}}script/js/{{js_link}}"></script>
 {% endif %}
