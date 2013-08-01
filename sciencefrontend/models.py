@@ -25,10 +25,3 @@ class Script (models.Model):
 		}
 
 		return self.data
-
-
-class Datafile(models.Model):
-	"""
-	Uploaded user files
-	"""
-	datafile = models.FileField(upload_to='%Y/%m/%d')
