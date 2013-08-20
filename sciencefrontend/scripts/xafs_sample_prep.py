@@ -99,7 +99,7 @@ def xafs_sample_prep_get_abslen(request):
 		#Compute approx. total mass assuming 0.65 cm radius for pellet (standard size for Pike brand pellet press)
 		total_mass = round(dens * (0.65**2) * 3.14159 * (abs_length/10000) * 1000, 2)
 
-		res += "<tr><td>Total Pellet Mass:</td><td>" + str(total_mass) + " mg</td></tr>"
+		res += "<tr><td>Pellet Mass (13mm diameter):</td><td>" + str(total_mass) + " mg</td></tr>"
 
 		res += "</table>"
 
