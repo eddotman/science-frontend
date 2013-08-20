@@ -97,9 +97,9 @@ def xafs_sample_prep_get_abslen(request):
 		res += "<tr><td>Total X-ray Absorption Length:</td><td>" + str(round(abs_length,2)) + " microns </td></tr>"
 
 		#Compute approx. total mass assuming 0.65 cm radius for pellet (standard size for Pike brand pellet press)
-		total_mass = dens * (0.65**2) * 3.14159 * (abs_length/10000)
+		total_mass = round(dens * (0.65**2) * 3.14159 * (abs_length/10000) * 1000, 2)
 
-		res += "<tr><td>Total Pellet Mass:</td><td>" + str(total_mass) + " g</td></tr>"
+		res += "<tr><td>Total Pellet Mass:</td><td>" + str(total_mass) + " mg</td></tr>"
 
 		res += "</table>"
 
