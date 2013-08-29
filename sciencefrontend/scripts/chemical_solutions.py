@@ -13,7 +13,7 @@ def chemical_solutions(request):
 	"""
 	
 	try:
-		s = Script.objects.get(name="xafs_sample_prep")
+		s = Script.objects.get(name="chemical_solutions")
 	except:
 		des = "computes how to create a solution from a solid chemical."
 		ttl = "Chemical Solution Preparation"
