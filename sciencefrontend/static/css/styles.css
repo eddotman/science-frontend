@@ -6,7 +6,7 @@ html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
 h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 1px) and (max-width: 320px) {
-	p, li, input[type="text"] {font-size:65%;}
+	p, li, input[type="text"] {font-size:55%;}
 	h2, h3 {font-size: 80%; margin: 2px 0;}
 
 	.hugepad {padding: 80px 20px;}
