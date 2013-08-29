@@ -14,6 +14,7 @@ from scripts.contact import *
 from scripts.function_plot import *
 from scripts.data_plot import *
 from scripts.xafs_sample_prep import *
+from scripts.chemical_solutions import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -37,6 +38,8 @@ urlpatterns = patterns('',
 
     url(r'^xafs_sample_prep/$', xafs_sample_prep),
     url(r'^xafs_sample_prep/abslen/$', xafs_sample_prep_get_abslen),
+
+    url (r'^chemical_solutions/$', chemical_solutions),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),
