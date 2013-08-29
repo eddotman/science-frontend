@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block outside_block %}
+	{% include "script_head.html" %}
+{% endblock %}
+
+{% block script_gui %}
+	<h2>Chemical Data:</h2>
+
+	<form id="inputform">
+		<p><input id="chem" type="text" placeholder="Chemical formula (e.g. NaCl, Ni(OH)2, Na2HAsO4+7H2O)"></p>
+		<p><input id="conc" type="text" placeholder="Desired molar concentration (e.g. 0.5)"></p>
+		<br>
+		<button id="clear" class="btn btn-primary submit-btn">Reset Fields</button><br>
+		<button id="submit" class="btn btn-success submit-btn">Compute my data</button>
+	</form>
+
+	<div id="result">
+	</div>
+
+	<div id="readme">
+		<h1>README:</h1>
+		<p>
+			This script automates the calculation for creating solutions from dry chemicals (e.g. powders) of a certain molarity. For example, if you wanted to create a 1M solution of chemical X, you would want to know how many grams of chemical X you should measure out. While this is a trivial calculation, it can sometimes be tedious to compute this by hand. This is exactly the problem addressed by this script.
+		</p>
+		<h1>Example Input/Output:</h1>
+		<h2>INPUT</h2>
+		<ol>
+			<li>Formula: NaCl</li>
+			<li>Concentration: 1.0</li>
+		</ol>
+
+		<h2>OUTPUT</h2>
+		<ol>
+			<li>[Coming soon...]</li>
+		</ol>
+	</div>
+{% endblock %}
