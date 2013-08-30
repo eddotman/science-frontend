@@ -11,8 +11,6 @@ from scripts.scripts import *
 from scripts.contact import *
 
 #Import scripts
-from scripts.function_plot import *
-from scripts.data_plot import *
 from scripts.xafs_sample_prep import *
 from scripts.chemical_solutions import *
 
@@ -30,12 +28,6 @@ urlpatterns = patterns('',
     url(r'^contact/$', contact),
 
 	#Scripts
-	url(r'^function_plot/$', function_plot),
-	url(r'^function_plot/(?P<funct>.+)/(?P<xmin>.+)/(?P<xmax>.+)/plot\.(?P<type>.+)$', function_plot_image),
-
-    url(r'^data_plot/$', data_plot),
-    url(r'^data_plot/plot/$', data_plot_image),
-
     url(r'^xafs_sample_prep/$', xafs_sample_prep),
     url(r'^xafs_sample_prep/abslen/$', xafs_sample_prep_get_abslen),
 
