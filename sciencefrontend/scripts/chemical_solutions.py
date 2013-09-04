@@ -69,8 +69,8 @@ def chemical_solutions_compute(request):
 		mass_needed = mass * conc * vol
 
 
-		res += "<tr><td>Mass Needed:</td><td>" + str(round(mass_needed,2)) + "</td></tr>"
-		res += "<tr><td>Total Volume:</td><td>" + str(vol) + "</td></tr>"
+		res += "<tr><td>Mass Needed:</td><td>" + str(round(mass_needed,2)) + " g</td></tr>"
+		res += "<tr><td>Total Volume:</td><td>" + str(vol) + " L</td></tr>"
 
 		return HttpResponse(res)
 
