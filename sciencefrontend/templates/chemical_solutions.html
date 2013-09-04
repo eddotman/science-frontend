@@ -6,7 +6,7 @@
 {% block script_gui %}
 	<h2>Chemical Data:</h2>
 
-	<form id="inputform">
+	<form id="inputform">{% csrf_token %}
 		<p><input id="chem" type="text" placeholder="Chemical formula (e.g. NaCl, Ni(OH)2, Na2HAsO4+7H2O)"></p>
 		<p><input id="conc" type="text" placeholder="Molar concentration (e.g. 0.5)"></p>
 		<p><input id="vol" type="text" placeholder="Total volume of solution in litres (e.g. 1.0)"></p>
