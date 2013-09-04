@@ -32,6 +32,7 @@ urlpatterns = patterns('',
     url(r'^xafs_sample_prep/abslen/$', xafs_sample_prep_get_abslen),
 
     url (r'^chemical_solutions/$', chemical_solutions),
+    url (r'^chemical_solutions/compute/$', chemical_solutions_compute),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),
