@@ -23,3 +23,54 @@ def chemical_solutions(request):
 	data = s.get_data()
 
 	return render(request, data['template'], data)
+
+def chemical_solutions_compute(request):
+	"""
+	Computes the mass of the compound needed.
+
+	POSTDATA:
+
+		chem: chemical compound
+		conc: molar concentration
+		vol: total volume in litres
+
+	RETURNS:
+
+		HttpResponse of the mass needed.
+	"""
+
+	if request.method == "POST":
+		
+		res = "<table class='table table-bordered'>"
+
+		try:
+			#Get POSTDATA
+			chem = str(request.POST['chem'])
+			conc = float(request.POST['conc'])
+			vol = float(request.POST['vol'])
+		except:
+			res = "Input format error! Please fix and retry."
+			return HttpResponse(res)
+
+
+		#Parse formula
+		form = formula(chem)
+		res += "<tr><td>Compound:</td><td>" + chem + "</td></tr>"
+
+		#Compute molecular mass
+		mass = 0.0
+
+		for elem in form.atoms:
+			mass += form.atoms[elem]*elem.mass 
+
+		res += "<tr><td>Molecular Mass:</td><td>" + str(round(mass,2)) + " g/mol </td></tr>"
+
+		#Compute mass needed for solution
+		mass_needed = mass * conc * vol
+
+
+		res += "<tr><td>Mass Needed:</td><td>" + mass_needed + "</td></tr>"
+		res += "<tr><td>Total Volume:</td><td>" + vol + "</td></tr>"
+
+		return HttpResponse(res)
+
