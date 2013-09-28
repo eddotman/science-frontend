@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from sciencefrontend.models import Script
 from django.http import HttpResponse
-from mucal import *
 from periodictable import *
+import periodictable.xsf as xsf
 
 def xafs_sample_prep(request):
 	"""
@@ -70,9 +70,13 @@ def xafs_sample_prep_get_abslen(request):
 
 		#Compute total mu
 		mu = 0.0
+		r_e = 2.8179403E-13 #cm
+		N_a = 6.02214E23
 		for elem in form.atoms:
 			frac = (form.atoms[elem]*elem.mass) / mass
-			mu += frac * get_total_xsec(elem.symbol, ephot)
+			xr = xsf.Xray(elem)
+			xsec = 2*r_e*xsf.xray_wavelength(ephot)*1E-8*xr.scattering_factors(energy=ephot)[1]*(N_a/elem.mass)
+			mu += frac * xsec
 
 		#Perform dilution with BN if needed
 		if str(bn) != "" and 0 < bn < 1:
@@ -83,7 +87,12 @@ def xafs_sample_prep_get_abslen(request):
 
 			dens = (1 - bn) * dens + bn * bn_dens
 
-			mu_bn = (frac_b * get_total_xsec(B.symbol, ephot) + frac_n * get_total_xsec(N.symbol, ephot))
+			xr_B = xsf.Xray(B)
+			xsec_B = 2*r_e*xsf.xray_wavelength(ephot)*1E-8*xr_B.scattering_factors(energy=ephot)[1]*(N_a/B.mass)
+			xr_N = xsf.Xray(N)
+			xsec_N = 2*r_e*xsf.xray_wavelength(ephot)*1E-8*xr_N.scattering_factors(energy=ephot)[1]*(N_a/N.mass)
+
+			mu_bn = frac_b * xsec_B + frac_n * xsec_N
 			mu = (1 - bn) * mu + bn * mu_bn
 
 			res += "<tr><td>BN Dilution Fraction:</td><td>" + str(bn) + "</td></tr>"
@@ -99,7 +108,7 @@ def xafs_sample_prep_get_abslen(request):
 		#Compute approx. total mass assuming 0.65 cm radius for pellet (standard size for Pike brand pellet press)
 		total_mass = round(dens * (0.65**2) * 3.14159 * (abs_length/10000) * 1000, 2)
 
-		res += "<tr><td>Pellet Mass (13mm diameter):</td><td>" + str(total_mass) + " mg</td></tr>"
+		res += "<tr><td>Pellet Mass (13mm diameter):</td><td>" + str(round(total_mass,2)) + " mg</td></tr>"
 
 		res += "</table>"
 
