@@ -2,7 +2,7 @@
 
 {% block outside_block %}
 
-<div class="bgcolor-darkgrey jumbotron noround text-center hugepad">
+<div class="bgcolor-darkgrey jumbotron noround text-center medpad">
 	<h1>Browse All Scripts</h1>
 </div>
 
@@ -11,8 +11,8 @@
 {% block script_gui %}
 
 {% for script in scripts %}
-<div class="jumbotron noround bgcolor-white">
-<h1><a href="/{{script.name}}/">{{script.ttl}}</a></h1>
+<div class="jumbotron noround bgcolor-grey">
+<h2><a href="/{{script.name}}/">{{script.ttl}}</a></h2>
 <p>{{script.ttl}} {{script.des}}</p>
 </div>
 {% endfor %}

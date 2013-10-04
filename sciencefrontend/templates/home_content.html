@@ -1,60 +1,44 @@
 {% extends "base.html" %}
 
 {% block outside_block %}
-<div class="bgcolor-red jumbotron noround text-center hugepad">
+<div class="text-white jumbotron noround text-center hugepad main-title">
 	<h1>Welcome to ScienceFrontend</h1>
 	<h3><strong>ScienceFrontend</strong> allows for simple, unified interaction with scientific scripts.</h3>
+	<a href="/scripts/"><button class="btn btn-success big-text">Try it out for free</button></a>
 </div>
 {% endblock %}
 
 {% block script_gui %}
 
 <div class="row">
-	<div class="jumbotron">
-		<div class="col-sm-3">
-			<img class="pull-right" src="/static/img/internet.svg">
-		</div>
-		<div class="col-sm-9">
+	
+		<div class="col-lg-3 text-center">
+			<img  src="/static/img/internet.svg">
 			<h2>No dependencies</h2>
-			<p><strong>ScienceFrontend</strong> gives you the freedom to compute from a web browser.</p>
-		</div>
+			<p>Run everything from the web</p>
+		
 	</div>
-</div>
-
-<div class="row">
-	<div class="jumbotron">
-		<div class="col-sm-3">
-			<img class="pull-right" src="/static/img/code.svg">
-		</div>
-		<div class="col-sm-9">
+	
+		<div class="col-lg-3 text-center">
+			<img  src="/static/img/code.svg">
 			<h2>No coding</h2>
-			<p><strong>ScienceFrontend</strong> lets you do science without the command line.</p>
-		</div>
+			<p>No command-line needed</p>
+		
 	</div>
-</div>
-
-<div class="row">
-	<div class="jumbotron">
-		<div class="col-sm-3">
-			<img class="pull-right" src="/static/img/lock.svg">
-		</div>
-		<div class="col-sm-9">
+	
+		<div class="col-lg-3 text-center">
+			<img  src="/static/img/lock.svg">
 			<h2>Secure data</h2>
-			<p><strong>ScienceFrontend</strong> doesn't store user data or personal info.</p>
-		</div>
+			<p>No data is ever stored</p>
+		
 	</div>
-</div>
 
-<div class="row">
-	<div class="jumbotron">
-		<div class="col-sm-3">
-			<img class="pull-right" src="/static/img/earth.svg">
-		</div>
-		<div class="col-sm-9">
+		<div class="col-lg-3 text-center">
+			<img  src="/static/img/earth.svg">
 			<h2>Open-source</h2>
-			<p><strong>ScienceFrontend</strong> only uses scripts that are 100% open-source.</p>
+			<p>Anyone can contribute</p>
 		</div>
-	</div>
+	
 </div>
 
 {% endblock %}

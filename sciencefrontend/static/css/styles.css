@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
-body {background: #eeeeee;}
+body {background: #ffffff;}
 html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
 h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
@@ -25,9 +25,14 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 	p, li,  input[type="text"] {font-size:100%;}
 	h2, h3, {font-size:120%;}
 
-	.hugepad {padding: 220px 20px;}
+	.hugepad {padding: 300px 20px;}
 	.medpad {padding: 120px 20px;}
 }
+
+.jumbotron {background: #ffffff;}
+.main-title {background: url('../img/cls_1.jpg'); background-size: 100% 100%; background-repeat: none;}
+
+.big-text {font-size: 105%;}
 
 .submit-btn {margin: 15px auto; padding:20px; width:100%; text-align:center;}
 
@@ -37,8 +42,11 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 .bgcolor-red {background: #c0392b; color: #ffffff;}
 .bgcolor-darkgrey {background: #222222; color: #ffffff;}
+.bgcolor-grey {background: #f5f5f5;}
 .bgcolor-white {background: #ffffff; color: #000000;}
 .bgcolor-black {background: #000000; color: #ffffff;}
+
+.text-white {color:#ffffff;}
 
 textarea {resize: none;width: 100%; padding: 10px;}
 input {width: 100%; border: 1px black solid;}
@@ -46,14 +54,14 @@ input[type="text"] {width: 100%; padding: 8px; border: 1px black solid;}
 button {margin:15px;}
 
 #result {width: 60%; margin: 0 auto;}
-#readme {margin-top: 25px; padding: 30px; background: #ffffff; color: #333333; font-family: consolas, courier;}
+#readme {margin-top: 25px; padding: 30px; background: #f5f5f5; color: #333333; font-family: consolas, courier;}
 #footer {padding: 15px;}
 
 .gui {min-height:300px; padding:25px 20px;}
 
 .nav li a {color:#ffffff;}
 .navcontainer {margin-bottom:40px;}
-.nav>li>a:hover,.nav>li>a:focus{text-decoration:none;background:#f5f5f5;color:#c0392b;}
+.nav>li>a:hover,.nav>li>a:focus{text-decoration:none; background: #000000; color:#c0392b;}
 
 .padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
 
