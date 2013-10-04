@@ -1,11 +1,21 @@
 {% include "head.html" %}
 <body>
 	<div class="navcontainer">
-		<ul class="nav nav-justified navbar-fixed-top bgcolor-black">
+		<ul class="nav navbar nav-justified navbar-fixed-top bgcolor-black hidden-sm hidden-xs ">
 			<li><a href="/">ScienceFrontend</a></li>
-			<li><a href="/about/">About</a></li>
-			<li><a href="/scripts/">Scripts</a></li>
-			<li><a href="/contact/">Contact</a></li>
+			<li ><a href="/about/">About</a></li>
+			<li ><a href="/scripts/">Scripts</a></li>
+			<li ><a href="/contact/">Contact</a></li>
+		</ul>
+		<ul class="nav navbar nav-justified navbar-fixed-top bgcolor-black visible-sm visible-xs ">
+			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ScienceFrontend<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about/">About</a></li>
+					<li><a href="/scripts/">Scripts</a></li>
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 

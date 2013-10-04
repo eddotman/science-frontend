@@ -9,19 +9,27 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 	p, li, input[type="text"] {font-size:55%;}
 	h2, h3 {font-size: 80%; margin: 2px 0;}
 
-	.hugepad {padding: 80px 20px;}
-	.medpad {padding: 30px 20px;}
+	.hugepad {padding: 40px 20px;}
+	.medpad {padding: 20px 20px;}
 }
 
 @media (min-width: 321px) and (max-width: 600px) {
 	p, li,  input[type="text"] {font-size:75%;}
 	h2, h3 {font-size: 90%;margin: 5px 0;}
 
-	.hugepad {padding: 120px 20px;}
-	.medpad {padding: 50px 20px;}
+	.hugepad {padding: 80px 20px;}
+	.medpad {padding: 40px 20px;}
 }
 
-@media (min-width: 601px) {
+@media (min-width: 601px) and (max-width: 900px)  {
+	p, li,  input[type="text"] {font-size:100%;}
+	h2, h3, {font-size:120%;}
+
+	.hugepad {padding: 180px 20px;}
+	.medpad {padding: 90px 20px;}
+}
+
+@media (min-width: 901px) {
 	p, li,  input[type="text"] {font-size:100%;}
 	h2, h3, {font-size:120%;}
 
@@ -62,6 +70,8 @@ button {margin:15px;}
 .nav li a {color:#ffffff;}
 .navcontainer {margin-bottom:40px;}
 .nav>li>a:hover,.nav>li>a:focus{text-decoration:none; background: #000000; color:#c0392b;}
+.dropdown-menu {background:#000000;}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus { background: #000000;}
 
 .padded-right{padding-right: 40px; padding-left: 110px; padding-top: 10px;}
 
