@@ -13,6 +13,7 @@ from scripts.contact import *
 #Import scripts
 from scripts.xafs_sample_prep import *
 from scripts.chemical_solutions import *
+from scripts.fdmnes_input import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -33,6 +34,8 @@ urlpatterns = patterns('',
 
     url (r'^chemical_solutions/$', chemical_solutions),
     url (r'^chemical_solutions/compute/$', chemical_solutions_compute),
+
+    url (r'^fdmnes_input/$', fdmnes_input),
 
     # Examples:
     # url(r'^$', 'sciencefrontend.views.home', name='home'),

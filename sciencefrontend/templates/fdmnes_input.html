@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block outside_block %}
+	{% include "script_head.html" %}
+{% endblock %}
+
+{% block script_gui %}
+	<h2>Input File Parameters:</h2>
+
+	<form id="inputform">{% csrf_token %}
+		<p><input id="outfile" type="text" placeholder="Output-file name (e.g. my_file_01, experiment002)"></p>
+		<p><input id="radius" type="text" placeholder="Cluster radius in Angstroms (e.g. 3.0)"></p>
+		<p><input id="crystal" type="text" placeholder="Crystal Structure"></p>
+		<br>
+		<div class="text-center">
+		<button id="clear" class="btn btn-primary submit-btn">Reset</button>
+		<button id="submit" class="btn btn-success submit-btn">Compute</button>
+		</div>
+	</form>
+
+	<div id="result">
+	</div>
+
+	<div id="readme">
+		<h2>README:</h2>
+		<p>
+			This script automates the preparation of an input file for the FDMNES program for XAFS calculations.
+		</p>
+		<h2>Example Input/Output:</h2>
+		<h3>INPUT</h3>
+
+		<h3>OUTPUT</h3>
+	</div>
+{% endblock %}
