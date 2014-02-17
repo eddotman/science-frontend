@@ -11,29 +11,27 @@
 		<p><input id="conc" type="text" placeholder="Molar concentration (e.g. 0.5)"></p>
 		<p><input id="vol" type="text" placeholder="Total volume of solution in litres (e.g. 1.0)"></p>
 		<br>
-		<div class="text-center">
-		<button id="clear" class="btn btn-primary submit-btn">Reset</button>
-		<button id="submit" class="btn btn-success submit-btn">Compute</button>
-		</div>
+		<button id="clear" class="btn btn-primary submit-btn">Reset Fields</button><br>
+		<button id="submit" class="btn btn-success submit-btn">Compute my data</button>
 	</form>
 
 	<div id="result">
 	</div>
 
 	<div id="readme">
-		<h2>README:</h2>
+		<h1>README:</h1>
 		<p>
 			This script automates the calculation for creating solutions from dry chemicals (e.g. powders) of a certain molarity. For example, if you wanted to create a 1M solution of chemical X, you would want to know how many grams of chemical X you should measure out. While this is a trivial calculation, it can sometimes be tedious to compute this by hand. This is exactly the problem addressed by this script.
 		</p>
-		<h2>Example Input/Output:</h2>
-		<h3>INPUT</h3>
+		<h1>Example Input/Output:</h1>
+		<h2>INPUT</h2>
 		<ol>
 			<li>Formula: NaCl</li>
 			<li>Concentration: 1.0</li>
 			<li>Total Volume: 1.0</li>
 		</ol>
 
-		<h3>OUTPUT</h3>
+		<h2>OUTPUT</h2>
 		<ol>
 			<li>Molecular Mass: 58.44 g/mol</li>
 			<li>Mass Needed: 58.44 g</li>

@@ -6,7 +6,7 @@ html, body, p {font-family:"Open Sans", "arial"; font-weight:300;}
 h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 @media (min-width: 1px) and (max-width: 320px) {
-	button, p, li, input[type="text"] {font-size:55%;}
+	p, li, input[type="text"] {font-size:55%;}
 	h2, h3 {font-size: 80%; margin: 2px 0;}
 
 	.hugepad {padding: 40px 20px;}
@@ -14,7 +14,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 }
 
 @media (min-width: 321px) and (max-width: 600px) {
-	button, p, li,  input[type="text"] {font-size:75%;}
+	p, li,  input[type="text"] {font-size:75%;}
 	h2, h3 {font-size: 90%;margin: 5px 0;}
 
 	.hugepad {padding: 80px 20px;}
@@ -22,7 +22,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 }
 
 @media (min-width: 601px) and (max-width: 900px)  {
-	button, p, li,  input[type="text"] {font-size:100%;}
+	p, li,  input[type="text"] {font-size:100%;}
 	h2, h3, {font-size:120%;}
 
 	.hugepad {padding: 180px 20px;}
@@ -30,7 +30,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 }
 
 @media (min-width: 901px) {
-	button, p, li,  input[type="text"] {font-size:100%;}
+	p, li,  input[type="text"] {font-size:100%;}
 	h2, h3, {font-size:120%;}
 
 	.hugepad {padding: 300px 20px;}
@@ -42,8 +42,7 @@ h1, h2, h3 {font-family: "Lato"; font-weight:300;}
 
 .big-text {font-size: 105%;}
 
-.submit-btn {margin: 15px 5px; padding:20px; width:35%; text-align:center;}
-.pad-btn {margin: 15px auto; padding:15px 30px; text-align:center;}
+.submit-btn {margin: 15px auto; padding:20px; width:100%; text-align:center;}
 
 .dotlink a {text-decoration:none; color: #ffffff; border-bottom: 1px #ffffff dotted;}
 .nolink a {text-decoration: none; color:inherit;}
@@ -68,7 +67,6 @@ button {margin:15px;}
 
 .gui {min-height:300px; padding:25px 20px;}
 
-.nav {padding-top: 3px;}
 .nav li a {color:#ffffff;}
 .navcontainer {margin-bottom:40px;}
 .nav>li>a:hover,.nav>li>a:focus{text-decoration:none; background: #000000; color:#c0392b;}
