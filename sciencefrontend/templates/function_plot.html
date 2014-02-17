@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block outside_block %}
+
+{% include "script_head.html" %}
+
+{% endblock %}
+
+{% block script_gui %}
+
+<h2>Input plotting data:</h2>
+
+<form method="post" id="funcform">{% csrf_token %}
+	<p><input id="funct" type="text" placeholder="Enter a function (e.g. x**2, cos(x), sin(x)*cos(x), x+1)"></p>
+	<p><input id="xmin" type="text" placeholder="Enter the minimum x-value (e.g. 0.0)"></p>
+	<p><input id="xmax" type="text" placeholder="Enter the maximum x-value (e.g. 10.0)"></p>
+	
+	<br>
+
+	<button id="submit" class="btn submit-btn btn-success"> Plot my function!</button>
+
+</form>
+
+<br>
+
+<div id="result">
+	<img id="result_img">
+	<div id="resultButtons">
+	</div>
+</div>
+{% endblock %}

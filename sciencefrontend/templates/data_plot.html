@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block outside_block %}
+
+{% include "script_head.html" %}
+
+{% endblock %}
+
+{% block script_gui %}
+
+<h2>Input plotting data:</h2>
+
+<form method="post" id="dataform">{% csrf_token %}
+	<p><textarea id="data" rows="10" placeholder="Please copy+paste or manually enter your data..."></textarea></p>
+	
+	<br>
+
+	<button id="submit" class="btn submit-btn btn-success"> Plot my data!</button>
+</form>
+
+<br>
+
+<div id="result">
+	<img id="result_img">
+	<div id="resultButtons">
+	</div>
+	<div id="resultWarning">
+	</div>
+</div>
+
+<div id="readme">
+<h2>Example: Input data (As K-Edge XAFS)</h2>
+<pre>
+ 'Energy (eV)'    'x*mu (arb.)'
+  11861.500       0.52126387E-01
+  11861.800       0.54510878E-01
+  11862.500       0.62948172E-01
+  11863.500       0.76515877E-01
+  11863.700       0.80300667E-01
+  11864.500       0.95982452E-01
+  11864.800       0.10146210
+  11865.700       0.13013570
+  11866.000       0.14048082
+  11866.300       0.15076948
+  11866.500       0.16155347
+  11867.500       0.22663294
+  11867.700       0.24768708
+  11868.000       0.27268245
+  11868.700       0.37690829
+  11869.000       0.43032744
+  11870.200       0.80401467
+  11870.500       0.92699396
+  11870.700        1.0584223 
+  11871.500        1.5518097
+  11871.700        1.7209413
+  11872.000        1.9074234
+  11873.000        2.3469761
+  11873.300        2.3792002 
+  11874.300        2.2159330
+  11874.500        2.1338775
+  11874.800        2.0326086
+  11875.800        1.7074078
+  11876.000        1.6509537
+  11876.300        1.5969778
+  11876.500        1.5576123
+  11877.800        1.4255571
+  11878.000        1.4063213
+  11878.200        1.3848287
+</pre>
+</div>
+{% endblock %}

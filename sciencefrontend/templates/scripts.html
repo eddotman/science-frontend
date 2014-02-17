@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block outside_block %}
+
+<div class="bgcolor-darkgrey jumbotron noround text-center medpad">
+	<h1>Browse All Scripts</h1>
+</div>
+
+{% endblock %}
+
+{% block script_gui %}
+
+{% for script in scripts %}
+<div class="jumbotron noround bgcolor-grey">
+<h2><a href="/{{script.name}}/">{{script.ttl}}</a></h2>
+<p>{{script.ttl}} {{script.des}}</p>
+</div>
+{% endfor %}
+{% endblock %}
