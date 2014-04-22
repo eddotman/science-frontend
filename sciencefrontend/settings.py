@@ -2,7 +2,9 @@
 import os
 import psycopg2
 
-DEBUG = False
+
+
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
